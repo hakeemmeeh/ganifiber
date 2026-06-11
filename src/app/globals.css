@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ─── BRAND COLORS ─────────────────────────────────────────── */
+  --color-navy: #060E2B;
+  --color-navy-mid: #0A1845;
+  --color-electric: #1A5FF0;
+  --color-electric-dark: #0A3DA8;
+  --color-cyan: #00C2F0;
+  --color-fiber: #2ECC5A;
+  --color-fiber-dark: #1DA048;
+  --color-gray-50: #F4F7FD;
+  --color-gray-100: #E8EEF8;
+  --color-gray-400: #94A3B8;
+  --color-gray-600: #4A5568;
+  --color-gray-900: #1A202C;
+
+  /* ─── TYPOGRAPHY ────────────────────────────────────────────── */
+  --font-syne: var(--font-syne-loaded);
+  --font-sans: var(--font-dm-sans-loaded);
+
+  /* ─── ANIMATIONS ────────────────────────────────────────────── */
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2s ease-out infinite;
+  --animate-strand-move: strand-move 12s linear infinite;
+  --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
+  --animate-map-dash: map-dash 8s linear infinite;
+
+  @keyframes map-dash {
+    from {
+      stroke-dashoffset: 120;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  @keyframes strand-move {
+    0% { transform: translateX(-100%); opacity: 0; }
+    10%, 90% { opacity: 1; }
+    100% { transform: translateX(100vw); opacity: 0; }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+}
+
+/* ─── BASE STYLES ─────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #4A5568;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* ─── CUSTOM SCROLLBAR ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F4F7FD; }
+::-webkit-scrollbar-thumb { background: #1A5FF0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0A3DA8; }
+
+/* ─── UTILITY CLASSES ─────────────────────────────────────────── */
+.perspective-1000 { perspective: 1000px; }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+
+.circuit-pattern {
+  background-image:
+    linear-gradient(rgba(26,95,240,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,95,240,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── NAV LINK UNDERLINE ANIMATION ────────────────────────────── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #00C2F0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── MODERN AESTHETIC UTILITIES ────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #1A5FF0 0%, #00C2F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-border {
+  position: relative;
+}
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #1A5FF0, #00C2F0);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-border:hover::after {
+  opacity: 1;
+}
+
+.mesh-bg {
+  background-color: #060E2B;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(26, 95, 240, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(0, 194, 240, 0.1) 0px, transparent 50%);
+}
+
+/* ─── OVERLAPPING PANEL FLOW ──────────────────────────────────── */
+.overlap-panel-white {
+  position: relative;
+  z-index: 20;
+  margin-top: -3.5rem;
+  border-radius: 36px 36px 0 0;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(6, 14, 43, 0.03);
+}
+
+@media (min-width: 768px) {
+  .overlap-panel-white {
+    margin-top: -5rem;
+    border-radius: 56px 56px 0 0;
+  }
+}
+
+.overlap-panel-gray {
+  position: relative;
+  z-index: 20;
+  margin-top: -3.5rem;
+  border-radius: 36px 36px 0 0;
+  background-color: #F4F7FD; /* color-gray-50 */
+  box-shadow: 0 -25px 60px rgba(6, 14, 43, 0.03);
+}
+
+@media (min-width: 768px) {
+  .overlap-panel-gray {
+    margin-top: -5rem;
+    border-radius: 56px 56px 0 0;
+  }
+}
+
+
