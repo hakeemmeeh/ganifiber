@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { IconBuilding, IconWorld, IconHome, IconBuildingSkyscraper } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
@@ -18,6 +19,8 @@ const solutions = [
     desc: 'We build, own, and manage fiber infrastructure that ISPs and estate managers can leverage to deliver broadband.',
     tags: ['Open Access', 'Last Mile'],
     link: '/for-isps',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop',
+    imageAlt: 'Telecom infrastructure and fiber construction',
   },
   {
     icon: IconWorld,
@@ -28,6 +31,8 @@ const solutions = [
     desc: 'Full BGP routing, carrier interconnect, and metro fiber links for ISPs expanding across Nairobi and beyond.',
     tags: ['BGP', 'IPv4/IPv6', 'Metro'],
     link: '/for-isps',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop',
+    imageAlt: 'High-performance datacenter with fiber switches',
   },
   {
     icon: IconHome,
@@ -38,6 +43,8 @@ const solutions = [
     desc: 'Unlimited symmetrical fiber broadband for apartments, gated communities, and residential estates.',
     tags: ['Unlimited', 'Symmetrical', 'FTTH'],
     link: '/for-homes',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop',
+    imageAlt: 'Modern residential estate with fiber connectivity',
   },
   {
     icon: IconBuildingSkyscraper,
@@ -48,6 +55,8 @@ const solutions = [
     desc: 'Dedicated connectivity for SMEs, enterprises, and property developers building future-ready projects.',
     tags: ['Dedicated', 'SLA', 'Enterprise'],
     link: '/business',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop',
+    imageAlt: 'Dynamic corporate office environment',
   },
 ]
 
@@ -69,28 +78,49 @@ export default function SolutionsGrid() {
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="card-premium p-9 group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-accent-gold after:to-amber-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500"
+              className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-accent-gold after:to-amber-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500"
             >
+              {/* Photo Header with Zoom Effect */}
+              <div className="relative h-44 lg:h-52 overflow-hidden rounded-t-[2rem]">
+                <Image
+                  src={s.image}
+                  alt={s.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-[1.2s] ease-luxury group-hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-nude-light via-nude-light/40 to-transparent pointer-events-none" />
+                
+                {/* Floating icon badge */}
+                <div className="absolute bottom-[-18px] left-7 z-20">
+                  <LivelyIcon
+                    icon={s.icon}
+                    variant={s.variant}
+                    className="w-12 h-12 border-2 border-white shadow-luxe"
+                    size={22}
+                  />
+                </div>
+
+                {/* Category badge */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-navy text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-full border border-accent-gold/15">
+                  {s.tags[0]}
+                </div>
+              </div>
+
               {/* Floating backdrop number watermark */}
               <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.02] group-hover:text-accent-gold/[0.06] transition-colors duration-550 select-none pointer-events-none z-0">
                 0{i + 1}
               </div>
 
-              <div className="relative z-10">
-                {/* Optional Yaa Mucaad styled top dash */}
-                <div className="flex items-center gap-3 mb-4">
+              <div className="relative z-10 p-7 pt-8">
+                {/* Optional styled top dash */}
+                <div className="flex items-center gap-3 mb-3">
                   <span className="h-px w-6 bg-accent-gold" />
                   <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent-gold">
                     {s.tags.slice(0, 1).join('')} SPECIFICATION
                   </p>
                 </div>
 
-                <LivelyIcon
-                  icon={s.icon}
-                  variant={s.variant}
-                  className="mb-5 w-13 h-13"
-                  size={24}
-                />
                 <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-350 group-hover:text-accent-gold">{s.title}</h3>
                 <p className="text-gray-650 text-sm leading-relaxed mb-4">{s.desc}</p>
                 <div className="flex flex-wrap gap-2 mb-4">

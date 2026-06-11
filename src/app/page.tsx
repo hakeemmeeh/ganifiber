@@ -4,10 +4,13 @@ import Hero from '@/components/home/Hero'
 import PartnerMarquee from '@/components/home/PartnerMarquee'
 import StatsBand from '@/components/home/StatsBand'
 import SolutionsGrid from '@/components/home/SolutionsGrid'
+import ServiceShowcase from '@/components/home/ServiceShowcase'
 import AboutSplit from '@/components/home/AboutSplit'
 import PlansPreview from '@/components/home/PlansPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import WhyGaniFiber from '@/components/home/WhyGaniFiber'
+import FeaturedProjects from '@/components/home/FeaturedProjects'
+import ImageGalleryBand from '@/components/home/ImageGalleryBand'
 import CircleStatsSection from '@/components/home/CircleStatsSection'
 import IndustriesStrip from '@/components/home/IndustriesStrip'
 import PortalPreview from '@/components/home/PortalPreview'
@@ -24,10 +27,13 @@ export default function HomePage() {
         <PartnerMarquee />
         <StatsBand />
         <SolutionsGrid />
+        <ServiceShowcase />
         <AboutSplit />
         <PlansPreview />
+        <FeaturedProjects />
         <HowItWorks />
         <WhyGaniFiber />
+        <ImageGalleryBand />
         <CircleStatsSection />
         <IndustriesStrip />
         <PortalPreview />
