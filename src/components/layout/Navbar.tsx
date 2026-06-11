@@ -16,46 +16,25 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
 
   useEffect(() => {
     setMobileOpen(false)
   }, [pathname])
 
   return (
-    <div className="fixed top-0 inset-x-0 z-50 flex justify-center pointer-events-none px-6">
-      <motion.header
-        animate={{
-          y: scrolled ? 16 : 0,
-          width: scrolled ? '100%' : '100%',
-          maxWidth: scrolled ? 1200 : '100%',
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.82)' : 'rgba(255, 255, 255, 0)',
-          backdropFilter: scrolled ? 'blur(18px)' : 'blur(0px)',
-          borderRadius: scrolled ? 20 : 0,
-          borderWidth: 1,
-          borderColor: scrolled ? 'rgba(6, 14, 43, 0.05)' : 'transparent',
-          boxShadow: scrolled ? '0 15px 45px rgba(6, 14, 43, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.6)' : '0 0 0 transparent',
-        }}
-        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-        className="pointer-events-auto w-full transition-all border-b border-transparent z-50 overflow-visible"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+    <div className="absolute top-0 inset-x-0 z-50 flex justify-center pointer-events-none px-6">
+      <header className="pointer-events-auto w-full transition-all border-b border-gray-100/50 z-50 overflow-visible bg-white/20 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo/gani-fiber-logo.png"
               alt="Gani Fiber"
-              width={200}
-              height={62}
-              className="h-15 w-auto object-contain transition-transform duration-300 hover:scale-103"
+              width={260}
+              height={80}
+              className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-103"
               priority
             />
           </Link>
@@ -150,7 +129,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
     </div>
   )
 }
