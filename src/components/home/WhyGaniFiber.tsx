@@ -63,27 +63,34 @@ export default function WhyGaniFiber() {
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="card-premium p-8 group cursor-pointer"
+              className="card-premium p-8 group cursor-pointer relative overflow-hidden"
             >
-              {/* Gold top accent label */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="h-px w-4 bg-accent-gold" />
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">PILLAR 0{i + 1}</span>
+              {/* Floating backdrop number watermark */}
+              <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.02] group-hover:text-accent-gold/[0.06] transition-colors duration-550 select-none pointer-events-none z-0">
+                0{i + 1}
               </div>
 
-              <LivelyIcon
-                icon={p.icon}
-                variant={p.variant}
-                className="mb-5 w-12 h-12"
-                size={24}
-              />
-              
-              <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">
-                {p.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {p.desc}
-              </p>
+              <div className="relative z-10">
+                {/* Gold top accent label */}
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="h-px w-4 bg-accent-gold" />
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">PILLAR 0{i + 1}</span>
+                </div>
+
+                <LivelyIcon
+                  icon={p.icon}
+                  variant={p.variant}
+                  className="mb-5 w-12 h-12"
+                  size={24}
+                />
+                
+                <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">
+                  {p.title}
+                </h3>
+                <p className="text-gray-650 text-sm leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </StaggerChildren>

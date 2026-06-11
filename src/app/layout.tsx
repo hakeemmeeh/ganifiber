@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 
-const cormorantGaramond = Cormorant_Garamond({
+const poppins = Poppins({
   variable: "--font-syne-loaded",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-dm-sans-loaded",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -48,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorantGaramond.variable} ${inter.variable} antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} antialiased`}>
       <body className="min-h-screen bg-white text-gray-600 font-sans">
         {children}
       </body>

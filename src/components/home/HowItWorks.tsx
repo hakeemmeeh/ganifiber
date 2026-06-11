@@ -66,35 +66,42 @@ export default function HowItWorks() {
           className="grid md:grid-cols-4 gap-8 relative"
         >
           {/* Connecting dashed line (desktop) */}
-          <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-gray-100 -z-10" />
+          <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-accent-gold/25 -z-10 animate-pulse-slow" />
 
           {steps.map((step, idx) => {
             return (
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                className="flex flex-col items-center text-center group relative bg-white border border-gray-50 rounded-2xl p-6 hover:shadow-[0_20px_45px_rgba(26,95,240,0.06)] hover:border-gray-100 transition-all duration-300"
+                className="flex flex-col items-center text-center group relative card-premium p-6 overflow-hidden min-h-[260px]"
               >
-                {/* Step Number Badge */}
-                <div className="absolute -top-3.5 left-6 bg-gradient-to-r from-navy to-navy-mid text-white font-syne font-bold text-xs px-3 py-1 rounded-full shadow-md tracking-wider">
-                  STEP {step.num}
+                {/* Floating backdrop number watermark */}
+                <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.015] group-hover:text-accent-gold/[0.05] transition-colors duration-550 select-none pointer-events-none z-0">
+                  {step.num}
                 </div>
 
-                {/* Step Icon */}
-                <LivelyIcon
-                  icon={step.icon}
-                  variant={step.variant}
-                  className="mb-5 w-14 h-14"
-                  size={26}
-                />
+                <div className="relative z-10 flex flex-col items-center h-full">
+                  {/* Step Number Badge */}
+                  <div className="absolute -top-9.5 left-0 bg-gradient-to-r from-accent-gold to-amber-500 text-navy font-syne font-black text-xs px-3.5 py-1 rounded-full shadow-md tracking-wider uppercase">
+                    STEP {step.num}
+                  </div>
 
-                {/* Step Content */}
-                <h3 className="font-syne font-bold text-lg text-navy mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-550 text-xs leading-relaxed">
-                  {step.desc}
-                </p>
+                  {/* Step Icon */}
+                  <LivelyIcon
+                    icon={step.icon}
+                    variant={step.variant}
+                    className="mb-5 mt-2 w-14 h-14"
+                    size={26}
+                  />
+
+                  {/* Step Content */}
+                  <h3 className="font-syne font-bold text-lg text-navy mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-550 text-xs leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
               </motion.div>
             )
           })}

@@ -34,91 +34,97 @@ export default function PricingCard({
       whileHover={{
         y: -10,
         boxShadow: highlighted
-          ? '0 30px 80px rgba(26,95,240,0.35)'
+          ? '0 30px 80px rgba(6,14,43,0.25)'
           : 'var(--shadow-luxe-hover)',
       }}
-      className={`p-8 border relative overflow-hidden flex flex-col h-full transition-all duration-700 ease-luxury ${
+      className={`border relative overflow-hidden flex flex-col h-full transition-all duration-700 ease-luxury ${
         highlighted
-          ? 'rounded-[2rem] bg-gradient-to-br from-electric to-electric-dark border-electric text-white shadow-xl shadow-electric/15'
+          ? 'rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy border-accent-gold shadow-xl shadow-navy/25 text-white'
           : 'card-premium text-navy'
       }`}
     >
       {/* Glow highlight for featured card */}
       {highlighted && (
         <>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/20 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-fiber text-navy text-xs font-bold px-4 py-1.5 rounded-full shadow-md tracking-wider uppercase">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/15 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-accent-gold to-amber-500 text-navy text-[10px] font-extrabold px-5 py-1.5 rounded-full shadow-md tracking-wider uppercase z-20">
             Most Popular
           </div>
         </>
       )}
 
-      {/* Plan Header */}
-      <div className={`text-xs font-bold tracking-wider uppercase mb-2 ${highlighted ? 'text-white/70' : 'text-accent-gold'}`}>
-        {name}
-      </div>
-      
-      {/* Plan Speed */}
-      <div className="font-syne font-bold text-5xl tracking-tight mb-2 flex items-baseline">
-        {speed}
-      </div>
-
-      {/* Symmetrical Speed Indicator Bar */}
-      <div className="mb-6">
-        <div className="flex justify-between text-2xs mb-1.5 font-medium">
-          <span className="flex items-center gap-0.5 opacity-80">
-            <IconDownload size={10} className={highlighted ? 'text-cyan' : 'text-accent-gold'} /> Down: {downloadSpeed}
-          </span>
-          <span className="flex items-center gap-0.5 opacity-80">
-            <IconUpload size={10} className={highlighted ? 'text-cyan' : 'text-fiber'} /> Up: {uploadSpeed}
-          </span>
+      {/* Plan Header Band (Satenet style) */}
+      <div className={`p-8 text-center border-b flex flex-col items-center justify-center ${
+        highlighted 
+          ? 'bg-white/5 border-white/10' 
+          : 'bg-accent-gold-pale/35 border-accent-gold/15'
+      }`}>
+        <div className={`text-2xs font-extrabold tracking-[0.2em] uppercase mb-2 ${highlighted ? 'text-accent-gold' : 'text-gray-500'}`}>
+          {name}
         </div>
-        <div className={`h-2.5 w-full rounded-full overflow-hidden p-[1.5px] ${highlighted ? 'bg-white/20' : 'bg-gray-150'}`}>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${speedPercentage}%` }}
-            transition={{ duration: 1, ease: 'easeOut' }}
-            className={`h-full rounded-full bg-gradient-to-r ${highlighted ? 'from-cyan to-fiber' : 'from-accent-gold to-fiber'}`}
-          />
+        <div className="font-syne font-black text-4xl lg:text-5xl tracking-tight leading-none">
+          {speed}
         </div>
-        <div className="text-3xs text-right mt-1 opacity-60 italic font-medium">Symmetrical Line</div>
       </div>
 
-      {/* Plan Price */}
-      <div className="mb-8">
-        <div className="flex items-baseline">
-          <span className="font-syne font-bold text-3xl">{price}</span>
-          <span className={`text-xs font-medium ml-1.5 ${highlighted ? 'text-white/80' : 'text-gray-400'}`}>
-            / {period === 'month' ? 'month' : 'year'}
-          </span>
-        </div>
-        {period === 'year' && (
-          <div className={`text-3xs font-semibold mt-1 uppercase ${highlighted ? 'text-cyan' : 'text-accent-gold'}`}>
-            ✓ Get 2 months free!
+      <div className="p-8 flex flex-col flex-grow">
+        {/* Symmetrical Speed Indicator Bar */}
+        <div className="mb-6">
+          <div className="flex justify-between text-2xs mb-2 font-semibold">
+            <span className="flex items-center gap-1 opacity-80">
+              <IconDownload size={11} className="text-cyan" /> Down: {downloadSpeed}
+            </span>
+            <span className="flex items-center gap-1 opacity-80">
+              <IconUpload size={11} className="text-fiber" /> Up: {uploadSpeed}
+            </span>
           </div>
-        )}
+          <div className={`h-2.5 w-full rounded-full overflow-hidden p-[1.5px] ${highlighted ? 'bg-white/10' : 'bg-gray-150'}`}>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${speedPercentage}%` }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              className="h-full rounded-full bg-gradient-to-r from-accent-gold via-cyan to-fiber"
+            />
+          </div>
+          <div className="text-4xs text-right mt-1.5 opacity-60 uppercase tracking-widest font-bold">Symmetrical Line</div>
+        </div>
+
+        {/* Plan Price */}
+        <div className="mb-8 text-center bg-gray-50/50 rounded-2xl py-4 border border-gray-100/60 dark:bg-white/5 dark:border-white/5">
+          <div className="flex items-baseline justify-center">
+            <span className="font-syne font-black text-3xl text-navy dark:text-white">{price}</span>
+            <span className={`text-2xs font-bold ml-1.5 uppercase tracking-wider ${highlighted ? 'text-gray-405' : 'text-gray-500'}`}>
+              / {period === 'month' ? 'month' : 'year'}
+            </span>
+          </div>
+          {period === 'year' && (
+            <div className="text-4xs font-bold mt-1.5 uppercase tracking-widest text-accent-gold">
+              ✓ Get 2 months free!
+            </div>
+          )}
+        </div>
+
+        {/* Features List */}
+        <ul className="space-y-4 mb-8 flex-grow">
+          {features.map((f, i) => (
+            <li key={i} className="flex items-start gap-3 text-xs leading-snug font-semibold">
+              <span className="font-bold shrink-0 text-sm text-accent-gold">✓</span>
+              <span className={highlighted ? 'text-gray-300' : 'text-gray-600'}>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA Button */}
+        <button
+          className={`w-full py-4 rounded-full font-syne font-extrabold text-xs tracking-widest uppercase transition-all duration-300 cursor-pointer shadow-md ${
+            highlighted
+              ? 'bg-gradient-to-r from-accent-gold to-amber-500 hover:from-amber-500 hover:to-accent-gold text-navy shadow-accent-gold/15'
+              : 'bg-navy text-white hover:bg-navy-mid hover:shadow-lg'
+          }`}
+        >
+          {cta}
+        </button>
       </div>
-
-      {/* Features List */}
-      <ul className="space-y-3.5 mb-8 flex-grow">
-        {features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2.5 text-sm leading-snug">
-            <span className={`font-bold mt-0.5 shrink-0 ${highlighted ? 'text-cyan' : 'text-accent-gold'}`}>✓</span>
-            <span className={highlighted ? 'text-white/90' : 'text-gray-600'}>{f}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* CTA Button */}
-      <button
-        className={`w-full py-3.5 rounded-full font-extrabold text-xs tracking-widest uppercase transition-all duration-200 cursor-pointer shadow-sm ${
-          highlighted
-            ? 'bg-white text-electric hover:bg-gray-50 hover:shadow-lg'
-            : 'bg-electric text-white hover:bg-electric-dark hover:shadow-md'
-        }`}
-      >
-        {cta}
-      </button>
     </motion.div>
   )
 }
