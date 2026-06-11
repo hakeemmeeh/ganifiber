@@ -25,7 +25,7 @@ export default function StatsBand() {
   return (
     <section 
       ref={containerRef}
-      className="relative pt-32 pb-32 overflow-hidden bg-navy"
+      className="relative pt-32 pb-32 overflow-hidden bg-[#EAF2FE]"
     >
       {/* GPU-Accelerated Parallax Background Image */}
       <motion.div
@@ -39,22 +39,22 @@ export default function StatsBand() {
       {/* Wave divider at top (from White background above) */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none rotate-180 pointer-events-none z-10">
         <svg className="relative block w-full h-8 text-white fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,107.82,1059.8,109.92,985.66,92.83Z"></path>
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,107.82,1059.8,109.92,985.66,92.83Z" />
         </svg>
       </div>
 
       {/* Dark overlay & blur mask for high legibility */}
-      <div className="absolute inset-0 bg-navy/90 backdrop-blur-[3px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#EAF2FE]/92 backdrop-blur-[3px] pointer-events-none" />
 
       {/* Dot matrix overlay */}
-      <div className="absolute inset-0 bg-dot-matrix-dark opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 bg-dot-matrix opacity-20 pointer-events-none" />
 
       {/* Background circuit pattern */}
       <div className="circuit-pattern opacity-15 absolute inset-0 pointer-events-none" />
       
       {/* Background glowing orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric/15 rounded-full blur-[100px] pointer-events-none animate-pulse-slow" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-cyan/15 rounded-full blur-[100px] pointer-events-none animate-pulse-slow [animation-delay:1s]" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-cyan/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow [animation-delay:1s]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
         <FadeUp>
@@ -75,7 +75,7 @@ export default function StatsBand() {
                   
                   {/* CountUp or Label */}
                   {'text' in stat && stat.text ? (
-                    <div className="font-syne font-bold text-4xl lg:text-5xl text-white tracking-tight leading-none">
+                    <div className="font-syne font-bold text-4xl lg:text-5xl text-navy tracking-tight leading-none">
                       {stat.text}
                     </div>
                   ) : (
@@ -83,11 +83,11 @@ export default function StatsBand() {
                       end={stat.end!}
                       suffix={stat.suffix}
                       decimals={stat.decimals || 0}
-                      className="font-syne font-bold text-4xl lg:text-5xl text-white tracking-tight leading-none"
+                      className="font-syne font-bold text-4xl lg:text-5xl text-navy tracking-tight leading-none"
                     />
                   )}
                   
-                  <div className="text-xs lg:text-sm text-gray-400 mt-2 font-medium tracking-wide">
+                  <div className="text-xs lg:text-sm text-gray-500 mt-2 font-medium tracking-wide">
                     {stat.label}
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export default function StatsBand() {
       {/* Wave divider at bottom (to Gray-50 background below) */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10">
         <svg className="relative block w-full h-8 text-gray-50 fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,107.82,1059.8,109.92,985.66,92.83Z"></path>
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,107.82,1059.8,109.92,985.66,92.83Z" />
         </svg>
       </div>
     </section>

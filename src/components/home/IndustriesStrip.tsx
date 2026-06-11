@@ -20,12 +20,12 @@ const industries = [
 
 export default function IndustriesStrip() {
   return (
-    <section className="bg-navy-mid py-20">
+    <section className="bg-[#EAF2FE] py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
-        <SectionTag light>Industries</SectionTag>
+        <SectionTag>Industries</SectionTag>
         <AnimatedText
           text="Sectors We Power"
-          className="font-syne font-bold text-3xl lg:text-4xl text-white text-center justify-center"
+          className="font-syne font-bold text-3xl lg:text-4xl text-navy text-center justify-center"
         />
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto mt-12">
           {industries.map((ind) => (
