@@ -76,7 +76,8 @@ export default function ForISPsPage() {
                         alt={s.title}
                         className="w-full h-full object-cover transition-transform duration-[1.2s] ease-luxury group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-nude-light via-nude-light/40 to-transparent pointer-events-none" />
+                      {/* Subtle dark gradient to let the photo shine while providing contrast for the icon */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
                       
                       <div className="absolute bottom-[-18px] left-6 z-20">
                         <LivelyIcon

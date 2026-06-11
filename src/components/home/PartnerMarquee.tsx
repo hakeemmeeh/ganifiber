@@ -35,13 +35,13 @@ export default function PartnerMarquee() {
             {partners.map((partner, i) => (
               <div 
                 key={i} 
-                className="mx-12 lg:mx-16 flex items-center justify-center cursor-pointer group"
+                className="mx-12 lg:mx-16 flex items-center justify-center cursor-pointer group hover:-translate-y-1 transition-transform duration-300"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={partner.url} 
                   alt={`${partner.name} logo`} 
-                  className="h-8 md:h-10 w-auto opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                  className="h-8 md:h-10 w-auto transition-all duration-300 drop-shadow-sm"
                 />
               </div>
             ))}
