@@ -7,7 +7,6 @@ import SolutionsGrid from '@/components/home/SolutionsGrid'
 import AboutSplit from '@/components/home/AboutSplit'
 import PlansPreview from '@/components/home/PlansPreview'
 import HowItWorks from '@/components/home/HowItWorks'
-import CoverageSection from '@/components/home/CoverageSection'
 import WhyGaniFiber from '@/components/home/WhyGaniFiber'
 import CircleStatsSection from '@/components/home/CircleStatsSection'
 import IndustriesStrip from '@/components/home/IndustriesStrip'
@@ -28,7 +27,6 @@ export default function HomePage() {
         <AboutSplit />
         <PlansPreview />
         <HowItWorks />
-        <CoverageSection />
         <WhyGaniFiber />
         <CircleStatsSection />
         <IndustriesStrip />
