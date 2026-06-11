@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface LivelyIconProps {
-  icon: React.ComponentType<any>
+  icon: React.ComponentType<{ size?: number; className?: string }>
   size?: number
   className?: string // Additional outer wrapper classes
   iconClassName?: string // Additional icon element classes

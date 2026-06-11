@@ -18,13 +18,23 @@ export default function AnimatedText({ text, className = '', tag = 'h2', delay =
   const Tag = tag
 
   return (
-    <motion.div ref={ref} variants={staggerFast} initial="hidden" animate={inView ? 'visible' : 'hidden'} style={{ transitionDelay: `${delay}s` }}>
+    <motion.div
+      ref={ref}
+      variants={staggerFast}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      transition={{ delayChildren: delay + 0.1 }}
+    >
       <Tag className={`flex flex-wrap gap-x-[0.3em] ${className}`}>
         {words.map((word, i) => (
-          <motion.span key={i} variants={wordReveal} className={`inline-block ${
-            highlightWords.includes(word) ? 'text-electric' :
-            greenWords.includes(word) ? 'text-fiber' : ''
-          }`}>
+          <motion.span
+            key={i}
+            variants={wordReveal}
+            className={`inline-block ${
+              highlightWords.includes(word) ? 'text-electric' :
+              greenWords.includes(word) ? 'text-fiber' : ''
+            }`}
+          >
             {word}
           </motion.span>
         ))}

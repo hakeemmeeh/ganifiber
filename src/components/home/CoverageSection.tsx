@@ -4,9 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
 import FadeInSide from '@/components/ui/FadeInSide'
-import Button from '@/components/ui/Button'
 import KenyaMap from '@/components/shared/KenyaMap'
-import { IconMapPin, IconSearch, IconCheck, IconClock, IconHelpCircle, IconWifi, IconServer, IconActivity } from '@tabler/icons-react'
+import { IconSearch, IconCheck, IconClock, IconHelpCircle, IconWifi, IconServer, IconActivity } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
 
 const liveZones = [

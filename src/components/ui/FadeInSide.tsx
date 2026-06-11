@@ -13,9 +13,14 @@ interface Props {
 export default function FadeInSide({ children, direction = 'left', className = '', delay = 0 }: Props) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
   return (
-    <motion.div ref={ref} variants={direction === 'left' ? fadeInLeft : fadeInRight}
-      initial="hidden" animate={inView ? 'visible' : 'hidden'}
-      style={{ transitionDelay: `${delay}s` }} className={className}>
+    <motion.div
+      ref={ref}
+      variants={direction === 'left' ? fadeInLeft : fadeInRight}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      transition={{ delay }}
+      className={className}
+    >
       {children}
     </motion.div>
   )
