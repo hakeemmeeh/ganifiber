@@ -47,6 +47,15 @@ export default function Hero() {
       <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full bg-electric/4 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-cyan/3 blur-[110px] pointer-events-none" />
       
+      {/* Elementor-style decorative background elements */}
+      <div className="absolute top-24 left-12 w-64 h-64 bg-dot-matrix opacity-25 pointer-events-none animate-float-slow" />
+      <div className="absolute bottom-24 right-12 w-80 h-80 bg-dot-matrix opacity-20 pointer-events-none animate-float-slow [animation-delay:2s]" />
+      
+      {/* Floating tech ornaments */}
+      <div className="absolute top-1/4 left-1/4 text-accent-gold/25 font-extralight text-2xl pointer-events-none select-none animate-spin-slow">+</div>
+      <div className="absolute bottom-1/3 left-10 text-electric/20 font-light text-xl pointer-events-none select-none animate-float-slow">⚡</div>
+      <div className="absolute top-1/3 right-1/4 text-cyan/25 font-extralight text-3xl pointer-events-none select-none animate-float-slow [animation-delay:3s]">+</div>
+
       {/* Particle network background */}
       <ParticleNetwork />
 

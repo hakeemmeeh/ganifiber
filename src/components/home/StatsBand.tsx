@@ -13,7 +13,12 @@ const stats = [
 
 export default function StatsBand() {
   return (
-    <section className="bg-gradient-to-br from-navy via-navy-mid to-navy relative pt-24 pb-24 overflow-hidden">
+    <section 
+      className="relative pt-32 pb-32 overflow-hidden bg-parallax"
+      style={{ 
+        backgroundImage: `url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop')` 
+      }}
+    >
       {/* Wave divider at top (from White background above) */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none rotate-180 pointer-events-none z-10">
         <svg className="relative block w-full h-8 text-white fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -21,12 +26,18 @@ export default function StatsBand() {
         </svg>
       </div>
 
+      {/* Dark overlay & blur mask for high legibility */}
+      <div className="absolute inset-0 bg-navy/90 backdrop-blur-[3px] pointer-events-none" />
+
+      {/* Dot matrix overlay */}
+      <div className="absolute inset-0 bg-dot-matrix-dark opacity-25 pointer-events-none" />
+
       {/* Background circuit pattern */}
-      <div className="circuit-pattern opacity-10 absolute inset-0 pointer-events-none" />
+      <div className="circuit-pattern opacity-15 absolute inset-0 pointer-events-none" />
       
       {/* Background glowing orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-cyan/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric/15 rounded-full blur-[100px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-cyan/15 rounded-full blur-[100px] pointer-events-none animate-pulse-slow [animation-delay:1s]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
         <FadeUp>

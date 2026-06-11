@@ -58,55 +58,40 @@ export default function AboutSplit() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-[0.9fr_1fr] gap-16 items-center">
-        {/* Left — 3D Parallax Tilt Card */}
-        <FadeInSide direction="left" className="perspective-1000">
-          <motion.div
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            animate={{ rotateX, rotateY }}
-            transition={{ type: 'spring', stiffness: 220, damping: 25 }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className="relative rounded-3xl overflow-hidden min-h-[440px] lg:min-h-[540px] shadow-[0_30px_70px_rgba(26,95,240,0.1)] cursor-pointer bg-navy border border-white/5"
-          >
-            {/* Base Image */}
+        {/* Left — Overlapping Elementor Collage */}
+        <FadeInSide direction="left" className="relative pb-8 pr-8 lg:pb-12 lg:pr-12">
+          {/* Dot matrix grid decoration */}
+          <div className="absolute -top-6 -left-6 w-48 h-48 bg-dot-matrix opacity-35 -z-10 rounded-2xl pointer-events-none animate-float-slow" />
+          
+          {/* Main big image card */}
+          <div className="relative rounded-[2rem] overflow-hidden min-h-[380px] lg:min-h-[460px] border border-accent-gold/15 shadow-luxe z-10 card-premium">
             <Image
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&auto=format&fit=crop"
-              alt="Global network connections from space"
+              src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&auto=format&fit=crop"
+              alt="Gani Fiber field engineer installing cables"
               fill
-              className="object-cover opacity-80"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent pointer-events-none" />
+          </div>
 
-            {/* Glowing orbs inside 3D space */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-electric/25 rounded-full blur-[80px] pointer-events-none" />
-
-            {/* Circuit pattern overlay in 3D layer */}
-            <div 
-              style={{ transform: 'translateZ(20px)' }}
-              className="absolute inset-0 circuit-pattern opacity-[0.06] pointer-events-none" 
-            />
-
-            {/* Parallax Badge 1 — Floating in front (Z=40px) */}
-            <div
-              style={{ transform: 'translateZ(40px)' }}
-              className="absolute top-6 left-6 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-white max-w-[170px]"
-            >
-              <div className="flex items-center gap-2">
-                <IconWorld size={18} className="text-cyan animate-spin-slow shrink-0" />
-                <span className="font-syne font-bold text-2xs leading-tight">East Africa Ring Backbone</span>
-              </div>
-            </div>
-
-            {/* Parallax Badge 2 — Floating in front (Z=50px) */}
-            <div
-              style={{ transform: 'translateZ(50px)' }}
-              className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-white max-w-[170px]"
-            >
-              <div className="font-syne font-bold text-xs text-fiber leading-tight">Redundant Nodes</div>
-              <div className="text-gray-300 text-4xs mt-0.5 font-medium leading-none">Nairobi - Mombasa trunk</div>
+          {/* Overlapping small image card */}
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute bottom-2 right-2 w-[180px] h-[180px] lg:w-[240px] lg:h-[240px] rounded-[2rem] overflow-hidden border-2 border-accent-gold bg-nude-light p-1.5 shadow-luxe z-20 cursor-pointer"
+          >
+            <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop"
+                alt="Fiber cable splicing close-up"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
+
+          {/* Decorative floating ring in background */}
+          <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full border-2 border-dashed border-accent-gold/25 animate-spin-slow pointer-events-none -z-10" />
         </FadeInSide>
 
         {/* Right — Content */}

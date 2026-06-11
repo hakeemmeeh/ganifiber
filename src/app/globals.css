@@ -29,6 +29,8 @@
 
   /* ─── ANIMATIONS ────────────────────────────────────────────── */
   --animate-float: float 5s ease-in-out infinite;
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 25s linear infinite;
   --animate-pulse-ring: pulse-ring 2s ease-out infinite;
   --animate-strand-move: strand-move 12s linear infinite;
   --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
@@ -46,6 +48,16 @@
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   @keyframes pulse-ring {
@@ -191,5 +203,30 @@ body {
     border-radius: 56px 56px 0 0;
   }
 }
+
+/* ─── ELEMENTOR / SATENET STYLES ───────────────────────────────── */
+.bg-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .bg-parallax {
+    background-attachment: scroll; /* Fallback for touch devices */
+  }
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.18) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.bg-dot-matrix-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
 
 
