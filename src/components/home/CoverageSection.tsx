@@ -4,9 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
 import FadeInSide from '@/components/ui/FadeInSide'
-import KenyaMap from '@/components/shared/KenyaMap'
+import dynamic from 'next/dynamic'
 import { IconSearch, IconCheck, IconClock, IconHelpCircle, IconWifi, IconServer, IconActivity } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
+
+// Dynamically import Leaflet map to disable SSR
+const KenyaMap = dynamic(() => import('@/components/shared/KenyaMap'), { 
+  ssr: false,
+  loading: () => <div className="w-full aspect-[4/5] lg:aspect-square max-w-md mx-auto bg-navy border border-navy-mid/60 rounded-[2rem] p-2 shadow-xl animate-pulse" />
+})
 
 const liveZones = [
   { name: 'Eastleigh', speed: '10G Ring', latency: '2ms' },
