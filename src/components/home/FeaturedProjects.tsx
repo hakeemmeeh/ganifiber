@@ -47,7 +47,7 @@ export default function FeaturedProjects() {
   const bgY = useTransform(scrollYProgress, [0, 1], [-40, 40])
 
   return (
-    <section ref={containerRef} className="relative py-28 bg-[#EAF2FE] overflow-hidden">
+    <section ref={containerRef} className="relative py-28 bg-[#B8DEFF] overflow-hidden">
       {/* Parallax photo background */}
       <motion.div
         style={{
@@ -57,7 +57,7 @@ export default function FeaturedProjects() {
         }}
         className="absolute inset-x-0 -top-20 -bottom-20 bg-cover bg-center pointer-events-none"
       />
-      <div className="absolute inset-0 bg-[#EAF2FE]/94 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#B8DEFF]/94 pointer-events-none" />
       <div className="absolute inset-0 bg-dot-matrix opacity-15 pointer-events-none" />
 
       {/* Glowing orbs */}

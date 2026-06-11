@@ -15,7 +15,7 @@ export default function CtaBanner() {
   return (
     <section 
       ref={containerRef}
-      className="relative overflow-hidden py-32 bg-[#EAF2FE] border-t border-electric/5"
+      className="relative overflow-hidden py-32 bg-[#B8DEFF] border-t border-electric/5"
     >
       {/* GPU-Accelerated Parallax Background Image */}
       <motion.div
@@ -27,7 +27,7 @@ export default function CtaBanner() {
         className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center pointer-events-none"
       />
       {/* Dark overlay & backdrop filter */}
-      <div className="absolute inset-0 bg-[#EAF2FE]/90 backdrop-blur-[2px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#B8DEFF]/90 backdrop-blur-[2px] pointer-events-none" />
 
       {/* Dot matrix pattern overlay */}
       <div className="absolute inset-0 bg-dot-matrix opacity-12 pointer-events-none" />

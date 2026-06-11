@@ -25,7 +25,7 @@ export default function StatsBand() {
   return (
     <section 
       ref={containerRef}
-      className="relative pt-32 pb-32 overflow-hidden bg-[#EAF2FE]"
+      className="relative pt-32 pb-32 overflow-hidden bg-[#B8DEFF]"
     >
       {/* GPU-Accelerated Parallax Background Image */}
       <motion.div
@@ -44,7 +44,7 @@ export default function StatsBand() {
       </div>
 
       {/* Dark overlay & blur mask for high legibility */}
-      <div className="absolute inset-0 bg-[#EAF2FE]/92 backdrop-blur-[3px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#B8DEFF]/92 backdrop-blur-[3px] pointer-events-none" />
 
       {/* Dot matrix overlay */}
       <div className="absolute inset-0 bg-dot-matrix opacity-20 pointer-events-none" />
