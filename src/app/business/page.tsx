@@ -54,11 +54,15 @@ export default function BusinessPage() {
             <StaggerChildren className="grid md:grid-cols-2 gap-6 mt-12">
               {solutions.map((s) => (
                 <FadeUp key={s.title}>
-                  <div className="border border-gray-100 rounded-xl p-8 hover:border-electric hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="w-12 h-12 rounded-xl bg-electric/10 flex items-center justify-center mb-5">
-                      <s.icon size={24} className="text-electric" />
+                  <div className="card-premium p-8 h-full group">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="h-px w-4 bg-accent-gold" />
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">BUSINESS</span>
                     </div>
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3">{s.title}</h3>
+                    <div className="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <s.icon size={24} className="text-accent-gold" />
+                    </div>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 </FadeUp>

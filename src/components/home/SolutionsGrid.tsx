@@ -64,26 +64,29 @@ export default function SolutionsGrid() {
             <motion.div
               key={i}
               variants={fadeInUp}
-              whileHover={{
-                y: -8,
-                borderColor: '#00C2F0',
-                boxShadow: '0 25px 55px rgba(26,95,240,0.15)',
-              }}
-              className="bg-white rounded-2xl p-9 border border-gray-100 transition-all duration-300 group cursor-pointer"
+              className="card-premium p-9 group cursor-pointer"
             >
+              {/* Optional Yaa Mucaad styled top dash */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-px w-6 bg-accent-gold" />
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent-gold">
+                  {s.tags.slice(0, 1).join('')} SPECIFICATION
+                </p>
+              </div>
+
               <div className={`w-13 h-13 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${s.iconBg}`}>
                 <s.icon size={24} className={`${s.iconColor} transition-transform duration-300`} />
               </div>
-              <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-350 group-hover:text-electric">{s.title}</h3>
+              <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-350 group-hover:text-accent-gold">{s.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {s.tags.map((tag) => (
-                  <span key={tag} className="bg-electric/5 text-electric text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-electric/10 transition-colors">
+                  <span key={tag} className="bg-accent-gold/5 text-accent-gold text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-accent-gold/10 transition-colors">
                     {tag}
                   </span>
                 ))}
               </div>
-              <Link href={s.link} className="text-electric text-sm font-bold group inline-flex items-center gap-1">
+              <Link href={s.link} className="text-accent-gold text-sm font-bold group inline-flex items-center gap-1">
                 Learn more
                 <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
               </Link>

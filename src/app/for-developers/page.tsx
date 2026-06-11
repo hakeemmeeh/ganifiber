@@ -68,11 +68,15 @@ export default function ForDevelopersPage() {
             <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {services.map((s) => (
                 <FadeUp key={s.title}>
-                  <div className="border border-gray-100 rounded-xl p-7 hover:border-electric hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="w-11 h-11 rounded-xl bg-electric/10 flex items-center justify-center mb-4">
-                      <s.icon size={22} className="text-electric" />
+                  <div className="card-premium p-7 h-full group">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="h-px w-4 bg-accent-gold" />
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">DEVELOPER</span>
                     </div>
-                    <h3 className="font-syne font-bold text-lg text-navy mb-2">{s.title}</h3>
+                    <div className="w-11 h-11 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <s.icon size={22} className="text-accent-gold" />
+                    </div>
+                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 </FadeUp>
@@ -120,8 +124,8 @@ export default function ForDevelopersPage() {
             <StaggerChildren className="grid md:grid-cols-2 gap-4 mt-12">
               {benefits.map((b) => (
                 <FadeUp key={b}>
-                  <div className="flex items-center gap-3 border border-gray-100 rounded-lg p-4">
-                    <span className="text-fiber text-lg">✓</span>
+                  <div className="card-premium p-4 rounded-xl flex items-center gap-3">
+                    <span className="text-accent-gold text-lg">✓</span>
                     <span className="text-navy text-sm font-medium">{b}</span>
                   </div>
                 </FadeUp>

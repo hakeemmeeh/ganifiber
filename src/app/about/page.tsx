@@ -74,11 +74,11 @@ export default function AboutPage() {
             <StaggerChildren className="grid md:grid-cols-3 gap-6">
               {values.map((v) => (
                 <FadeUp key={v.title}>
-                  <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:border-electric hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="w-14 h-14 rounded-2xl bg-electric/10 flex items-center justify-center mx-auto mb-5">
-                      <v.icon size={28} className="text-electric" />
+                  <div className="card-premium p-8 text-center h-full group">
+                    <div className="w-14 h-14 rounded-2xl bg-accent-gold/10 flex items-center justify-center mx-auto mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <v.icon size={28} className="text-accent-gold" />
                     </div>
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3">{v.title}</h3>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{v.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
                   </div>
                 </FadeUp>

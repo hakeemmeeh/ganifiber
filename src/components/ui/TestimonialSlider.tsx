@@ -37,13 +37,13 @@ export default function TestimonialSlider({ testimonials }: Props) {
   return (
     <div className="relative max-w-3xl mx-auto overflow-visible px-4">
       {/* Quotation mark decoration (large, background layered) */}
-      <div className="absolute top-[-30px] left-8 font-serif text-8xl text-electric/[0.04] pointer-events-none select-none select-none z-0">
+      <div className="absolute top-[-30px] left-8 font-serif text-8xl text-accent-gold/[0.1] pointer-events-none select-none z-0">
         “
       </div>
 
-      <div className="bg-white border border-gray-100 rounded-3xl p-8 lg:p-12 shadow-[0_20px_50px_rgba(26,95,240,0.05)] relative z-10 overflow-hidden">
+      <div className="card-premium p-8 lg:p-12 relative z-10 overflow-hidden">
         {/* Background ambient lighting */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/5 rounded-full blur-2xl pointer-events-none" />
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -90,7 +90,7 @@ export default function TestimonialSlider({ testimonials }: Props) {
             key={i}
             onClick={() => setActiveIndex(i)}
             className={`transition-all duration-300 cursor-pointer h-2.5 rounded-full ${
-              i === activeIndex ? 'w-8 bg-electric' : 'w-2.5 bg-gray-200 hover:bg-gray-300'
+              i === activeIndex ? 'w-8 bg-accent-gold' : 'w-2.5 bg-gray-250 hover:bg-gray-300'
             }`}
             aria-label={`View testimonial ${i + 1}`}
           />

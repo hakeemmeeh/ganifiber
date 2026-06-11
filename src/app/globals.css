@@ -15,6 +15,14 @@
   --color-gray-600: #4A5568;
   --color-gray-900: #1A202C;
 
+  --color-nude: #F9F1E8;
+  --color-nude-light: #FDF8F1;
+  --color-accent-gold: #D4AF37;
+  --color-accent-gold-pale: #F9F1D8;
+  --shadow-luxe: 0 20px 40px -10px rgba(10, 31, 19, 0.04);
+  --shadow-luxe-hover: 0 30px 60px -12px rgba(10, 31, 19, 0.08);
+  --ease-luxury: cubic-bezier(0.23, 1, 0.32, 1);
+
   /* ─── TYPOGRAPHY ────────────────────────────────────────────── */
   --font-syne: var(--font-syne-loaded);
   --font-sans: var(--font-dm-sans-loaded);
@@ -103,6 +111,21 @@ body {
 }
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+/* ─── YAA CARDS STYLE ─────────────────────────────────────────── */
+.card-premium {
+  border-radius: 2rem;
+  border-width: 1px;
+  border-color: rgba(212, 175, 55, 0.15);
+  background-color: var(--color-nude-light);
+  box-shadow: var(--shadow-luxe);
+  transition: transform 0.7s var(--ease-luxury), box-shadow 0.7s var(--ease-luxury), border-color 0.7s var(--ease-luxury);
+}
+.card-premium:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--shadow-luxe-hover) !important;
+  border-color: rgba(212, 175, 55, 0.7);
 }
 
 /* ─── MODERN AESTHETIC UTILITIES ────────────────────────────── */

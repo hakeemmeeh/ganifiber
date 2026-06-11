@@ -35,12 +35,12 @@ export default function PricingCard({
         y: -10,
         boxShadow: highlighted
           ? '0 30px 80px rgba(26,95,240,0.35)'
-          : '0 25px 65px rgba(26,95,240,0.15)',
+          : 'var(--shadow-luxe-hover)',
       }}
-      className={`rounded-3xl p-8 border transition-all duration-300 relative overflow-hidden flex flex-col h-full ${
+      className={`p-8 border relative overflow-hidden flex flex-col h-full transition-all duration-700 ease-luxury ${
         highlighted
-          ? 'bg-gradient-to-br from-electric to-electric-dark border-electric text-white shadow-xl shadow-electric/15'
-          : 'bg-white border-gray-100 text-navy'
+          ? 'rounded-[2rem] bg-gradient-to-br from-electric to-electric-dark border-electric text-white shadow-xl shadow-electric/15'
+          : 'card-premium text-navy'
       }`}
     >
       {/* Glow highlight for featured card */}
@@ -54,7 +54,7 @@ export default function PricingCard({
       )}
 
       {/* Plan Header */}
-      <div className={`text-xs font-bold tracking-wider uppercase mb-2 ${highlighted ? 'text-white/70' : 'text-gray-400'}`}>
+      <div className={`text-xs font-bold tracking-wider uppercase mb-2 ${highlighted ? 'text-white/70' : 'text-accent-gold'}`}>
         {name}
       </div>
       
@@ -67,10 +67,10 @@ export default function PricingCard({
       <div className="mb-6">
         <div className="flex justify-between text-2xs mb-1.5 font-medium">
           <span className="flex items-center gap-0.5 opacity-80">
-            <IconDownload size={10} className={highlighted ? 'text-cyan' : 'text-electric'} /> Down: {downloadSpeed}
+            <IconDownload size={10} className={highlighted ? 'text-cyan' : 'text-accent-gold'} /> Down: {downloadSpeed}
           </span>
           <span className="flex items-center gap-0.5 opacity-80">
-            <IconUpload size={10} className="text-fiber" /> Up: {uploadSpeed}
+            <IconUpload size={10} className={highlighted ? 'text-cyan' : 'text-fiber'} /> Up: {uploadSpeed}
           </span>
         </div>
         <div className={`h-2.5 w-full rounded-full overflow-hidden p-[1.5px] ${highlighted ? 'bg-white/20' : 'bg-gray-150'}`}>
@@ -78,7 +78,7 @@ export default function PricingCard({
             initial={{ width: 0 }}
             animate={{ width: `${speedPercentage}%` }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className={`h-full rounded-full bg-gradient-to-r ${highlighted ? 'from-cyan to-fiber' : 'from-electric to-fiber'}`}
+            className={`h-full rounded-full bg-gradient-to-r ${highlighted ? 'from-cyan to-fiber' : 'from-accent-gold to-fiber'}`}
           />
         </div>
         <div className="text-3xs text-right mt-1 opacity-60 italic font-medium">Symmetrical Line</div>
@@ -93,7 +93,7 @@ export default function PricingCard({
           </span>
         </div>
         {period === 'year' && (
-          <div className={`text-3xs font-semibold mt-1 uppercase ${highlighted ? 'text-cyan' : 'text-fiber-dark'}`}>
+          <div className={`text-3xs font-semibold mt-1 uppercase ${highlighted ? 'text-cyan' : 'text-accent-gold'}`}>
             ✓ Get 2 months free!
           </div>
         )}
@@ -103,7 +103,7 @@ export default function PricingCard({
       <ul className="space-y-3.5 mb-8 flex-grow">
         {features.map((f, i) => (
           <li key={i} className="flex items-start gap-2.5 text-sm leading-snug">
-            <span className={`text-fiber font-bold mt-0.5 shrink-0 ${highlighted ? 'text-cyan' : 'text-fiber'}`}>✓</span>
+            <span className={`font-bold mt-0.5 shrink-0 ${highlighted ? 'text-cyan' : 'text-accent-gold'}`}>✓</span>
             <span className={highlighted ? 'text-white/90' : 'text-gray-600'}>{f}</span>
           </li>
         ))}

@@ -62,18 +62,19 @@ export default function WhyGaniFiber() {
             <motion.div
               key={i}
               variants={fadeInUp}
-              whileHover={{
-                y: -6,
-                boxShadow: '0 20px 45px rgba(26,95,240,0.06)',
-                borderColor: '#00C2F0',
-              }}
-              className="border border-gray-100 bg-white rounded-2xl p-8 transition-all duration-300 group cursor-pointer"
+              className="card-premium p-8 group cursor-pointer"
             >
+              {/* Gold top accent label */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="h-px w-4 bg-accent-gold" />
+                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">PILLAR 0{i + 1}</span>
+              </div>
+
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center border mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${p.color}`}>
                 <p.icon size={24} className="stroke-[1.75]" />
               </div>
               
-              <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-electric">
+              <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">
                 {p.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">

@@ -64,14 +64,14 @@ export default function ForHomesPage() {
               text="Everything Your Household Needs"
               className="font-syne font-bold text-3xl lg:text-4xl text-navy text-center justify-center"
             />
-            <StaggerChildren className="grid grid-cols-3 md:grid-cols-6 gap-6 mt-12">
+            <StaggerChildren className="grid grid-cols-3 md:grid-cols-6 gap-6 mt-12 justify-center justify-items-center">
               {useCases.map((uc) => (
                 <FadeUp key={uc.label}>
-                  <div className="flex flex-col items-center gap-3">
-                    <div className="w-16 h-16 rounded-2xl bg-electric/8 flex items-center justify-center">
-                      <uc.icon size={28} className="text-electric" />
+                  <div className="flex flex-col items-center gap-3 group">
+                    <div className="w-20 h-20 rounded-full border border-accent-gold/20 bg-nude-light flex items-center justify-center transition-all duration-700 ease-luxury hover:-translate-y-2 hover:border-accent-gold hover:shadow-luxe group-hover:scale-105">
+                      <uc.icon size={28} className="text-accent-gold" />
                     </div>
-                    <span className="text-sm font-medium text-navy">{uc.label}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-navy mt-1">{uc.label}</span>
                   </div>
                 </FadeUp>
               ))}
@@ -105,7 +105,7 @@ export default function ForHomesPage() {
                 <ul className="mt-6 space-y-3">
                   {['Dedicated fiber to each unit', 'Community-wide mesh WiFi', 'Smart building integration', 'Estate management portal'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-fiber">✓</span> {item}
+                      <span className="text-accent-gold">✓</span> {item}
                     </li>
                   ))}
                 </ul>
@@ -127,10 +127,10 @@ export default function ForHomesPage() {
             <div className="mt-12 space-y-4">
               {faqs.map((faq, i) => (
                 <FadeUp key={i} delay={i * 0.05}>
-                  <details className="group border border-gray-100 rounded-xl p-5 cursor-pointer">
+                  <details className="group card-premium p-5 cursor-pointer">
                     <summary className="font-syne font-bold text-navy text-sm flex items-center justify-between list-none">
                       {faq.q}
-                      <span className="text-electric group-open:rotate-45 transition-transform duration-200 text-lg">+</span>
+                      <span className="text-accent-gold group-open:rotate-45 transition-transform duration-200 text-lg">+</span>
                     </summary>
                     <p className="text-gray-600 text-sm leading-relaxed mt-3">{faq.a}</p>
                   </details>

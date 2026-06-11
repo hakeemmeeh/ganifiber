@@ -67,15 +67,19 @@ export default function ForISPsPage() {
             <StaggerChildren className="grid md:grid-cols-3 gap-6 mt-12">
               {services.map((s) => (
                 <FadeUp key={s.title}>
-                  <div className="bg-white border border-gray-100 rounded-2xl p-8 hover:border-electric hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="w-12 h-12 rounded-xl bg-electric/10 flex items-center justify-center mb-5">
-                      <s.icon size={24} className="text-electric" />
+                  <div className="card-premium p-8 h-full group">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="h-px w-4 bg-accent-gold" />
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">WHOLESALE</span>
                     </div>
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3">{s.title}</h3>
+                    <div className="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <s.icon size={24} className="text-accent-gold" />
+                    </div>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {s.tags.map((tag) => (
-                        <span key={tag} className="bg-electric/8 text-electric text-xs rounded-md px-2.5 py-1">{tag}</span>
+                        <span key={tag} className="bg-accent-gold/5 text-accent-gold text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-accent-gold/10 transition-colors">{tag}</span>
                       ))}
                     </div>
                   </div>
