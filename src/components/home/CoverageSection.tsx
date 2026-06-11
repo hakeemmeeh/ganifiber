@@ -7,6 +7,7 @@ import FadeInSide from '@/components/ui/FadeInSide'
 import Button from '@/components/ui/Button'
 import KenyaMap from '@/components/shared/KenyaMap'
 import { IconMapPin, IconSearch, IconCheck, IconClock, IconHelpCircle, IconWifi, IconServer, IconActivity } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 const liveZones = [
   { name: 'Eastleigh', speed: '10G Ring', latency: '2ms' },
@@ -195,28 +196,37 @@ export default function CoverageSection() {
 
             {/* Core Metrics Network Strip */}
             <div className="mt-8 grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
-              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-electric/10 transition-colors">
-                <div className="p-1.5 rounded-lg bg-electric/5 text-electric shrink-0">
-                  <IconActivity size={15} className="stroke-[2]" />
-                </div>
+              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-electric/10 transition-colors group">
+                <LivelyIcon
+                  icon={IconActivity}
+                  variant="electric"
+                  className="w-8 h-8 rounded-lg shrink-0"
+                  size={15}
+                />
                 <div>
                   <div className="text-navy font-syne font-bold text-sm leading-none">&lt; 4ms</div>
                   <div className="text-5xs text-gray-400 font-bold uppercase tracking-wider mt-1.5">Nairobi Latency</div>
                 </div>
               </div>
-              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-cyan/10 transition-colors">
-                <div className="p-1.5 rounded-lg bg-cyan/10 text-cyan shrink-0">
-                  <IconServer size={15} className="stroke-[2]" />
-                </div>
+              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-cyan/10 transition-colors group">
+                <LivelyIcon
+                  icon={IconServer}
+                  variant="cyan"
+                  className="w-8 h-8 rounded-lg shrink-0"
+                  size={15}
+                />
                 <div>
                   <div className="text-navy font-syne font-bold text-sm leading-none">100G</div>
                   <div className="text-5xs text-gray-400 font-bold uppercase tracking-wider mt-1.5">Core Capacity</div>
                 </div>
               </div>
-              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-fiber/10 transition-colors">
-                <div className="p-1.5 rounded-lg bg-fiber/10 text-fiber-dark shrink-0">
-                  <IconWifi size={15} className="stroke-[2]" />
-                </div>
+              <div className="flex gap-2.5 items-start bg-gray-50/50 p-2.5 rounded-2xl border border-gray-100/50 hover:border-fiber/10 transition-colors group">
+                <LivelyIcon
+                  icon={IconWifi}
+                  variant="green"
+                  className="w-8 h-8 rounded-lg shrink-0"
+                  size={15}
+                />
                 <div>
                   <div className="text-navy font-syne font-bold text-sm leading-none">99.9%</div>
                   <div className="text-5xs text-gray-400 font-bold uppercase tracking-wider mt-1.5">SLA Uptime</div>

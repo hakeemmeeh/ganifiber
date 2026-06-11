@@ -9,6 +9,7 @@ import SectionTag from '@/components/ui/SectionTag'
 import AnimatedText from '@/components/ui/AnimatedText'
 import StaggerChildren from '@/components/ui/StaggerChildren'
 import { IconBuildingCommunity, IconRuler, IconFileCheck, IconPlug, IconHome2, IconHeadset } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 export const metadata: Metadata = {
   title: 'For Developers — Gani Fiber Ltd',
@@ -73,9 +74,12 @@ export default function ForDevelopersPage() {
                       <span className="h-px w-4 bg-accent-gold" />
                       <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">DEVELOPER</span>
                     </div>
-                    <div className="w-11 h-11 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <s.icon size={22} className="text-accent-gold" />
-                    </div>
+                    <LivelyIcon
+                      icon={s.icon}
+                      variant="gold"
+                      className="mb-4 w-11 h-11"
+                      size={22}
+                    />
                     <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                   </div>

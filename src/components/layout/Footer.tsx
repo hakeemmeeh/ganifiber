@@ -50,9 +50,9 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-gray-250 flex items-center justify-center text-gray-400 hover:text-navy hover:border-navy/30 transition-colors duration-200"
+                  className="w-9 h-9 rounded-full border border-gray-250 flex items-center justify-center text-gray-400 hover:text-accent-gold hover:border-accent-gold/40 hover:scale-110 hover:shadow-xs transition-all duration-300 group"
                 >
-                  <s.icon size={16} />
+                  <s.icon size={16} className="transition-transform duration-300 group-hover:rotate-6" />
                 </a>
               ))}
             </div>

@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconBolt, IconReceipt, IconActivity, IconHeadset, IconAdjustmentsHorizontal } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 import SectionTag from '@/components/ui/SectionTag'
 import AnimatedText from '@/components/ui/AnimatedText'
 import Button from '@/components/ui/Button'
@@ -163,10 +164,13 @@ export default function PortalPreview() {
           </div>
 
           {/* Floating UI highlights */}
-          <div className="absolute -bottom-5 -right-5 bg-white border border-gray-100 rounded-xl p-3 shadow-lg flex items-center gap-2.5 max-w-[170px] z-20">
-            <div className="p-1.5 rounded-lg bg-emerald-50 text-emerald-500">
-              <IconBolt size={16} />
-            </div>
+          <div className="absolute -bottom-5 -right-5 bg-white border border-gray-100 rounded-xl p-3 shadow-lg flex items-center gap-2.5 max-w-[170px] z-20 group">
+            <LivelyIcon
+              icon={IconBolt}
+              variant="green"
+              className="w-8 h-8 rounded-lg shrink-0 animate-pulse-slow"
+              size={16}
+            />
             <div>
               <div className="text-navy font-bold text-2xs leading-none">Instant Boost</div>
               <div className="text-gray-400 text-4xs mt-0.5 font-medium">Under 2 seconds</div>
@@ -186,10 +190,13 @@ export default function PortalPreview() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <div className="flex gap-3">
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-electric/5 border border-electric/10 text-electric flex items-center justify-center">
-                <IconAdjustmentsHorizontal size={20} className="stroke-[1.75]" />
-              </div>
+            <div className="flex gap-3 group">
+              <LivelyIcon
+                icon={IconAdjustmentsHorizontal}
+                variant="electric"
+                className="w-10 h-10 shrink-0"
+                size={20}
+              />
               <div>
                 <h4 className="font-syne font-bold text-navy text-sm">On-Demand Boosts</h4>
                 <p className="text-gray-550 text-xs mt-1 leading-normal">
@@ -198,10 +205,13 @@ export default function PortalPreview() {
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-cyan/10 border border-cyan/20 text-cyan flex items-center justify-center">
-                <IconActivity size={20} className="stroke-[1.75]" />
-              </div>
+            <div className="flex gap-3 group">
+              <LivelyIcon
+                icon={IconActivity}
+                variant="cyan"
+                className="w-10 h-10 shrink-0"
+                size={20}
+              />
               <div>
                 <h4 className="font-syne font-bold text-navy text-sm">Real-time Telemetry</h4>
                 <p className="text-gray-550 text-xs mt-1 leading-normal">
@@ -210,10 +220,13 @@ export default function PortalPreview() {
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-fiber/10 border border-fiber/20 text-fiber-dark flex items-center justify-center">
-                <IconReceipt size={20} className="stroke-[1.75]" />
-              </div>
+            <div className="flex gap-3 group">
+              <LivelyIcon
+                icon={IconReceipt}
+                variant="green"
+                className="w-10 h-10 shrink-0"
+                size={20}
+              />
               <div>
                 <h4 className="font-syne font-bold text-navy text-sm">Billing Automation</h4>
                 <p className="text-gray-550 text-xs mt-1 leading-normal">
@@ -222,10 +235,13 @@ export default function PortalPreview() {
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-purple-500/5 border border-purple-500/10 text-purple-500 flex items-center justify-center">
-                <IconHeadset size={20} className="stroke-[1.75]" />
-              </div>
+            <div className="flex gap-3 group">
+              <LivelyIcon
+                icon={IconHeadset}
+                variant="purple"
+                className="w-10 h-10 shrink-0"
+                size={20}
+              />
               <div>
                 <h4 className="font-syne font-bold text-navy text-sm">Rapid Ticket Dispatch</h4>
                 <p className="text-gray-550 text-xs mt-1 leading-normal">

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { IconBolt, IconRocket, IconMap, IconWorld } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 import AnimatedText from '@/components/ui/AnimatedText'
 import FadeInSide from '@/components/ui/FadeInSide'
 import SectionTag from '@/components/ui/SectionTag'
@@ -128,9 +129,12 @@ export default function AboutSplit() {
               {features.map((f, i) => (
                 <FadeUp key={i}>
                   <div className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 rounded-xl bg-electric/5 border border-electric/10 text-electric flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
-                      <f.icon size={20} className="stroke-[1.75]" />
-                    </div>
+                    <LivelyIcon
+                      icon={f.icon}
+                      variant="electric"
+                      className="w-10 h-10 shrink-0"
+                      size={20}
+                    />
                     <div>
                       <div className="font-semibold text-navy text-sm transition-colors duration-250 group-hover:text-electric">{f.title}</div>
                       <div className="text-sm text-gray-550 mt-0.5 leading-relaxed">{f.desc}</div>

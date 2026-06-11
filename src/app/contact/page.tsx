@@ -7,6 +7,7 @@ import FadeUp from '@/components/ui/FadeUp'
 import SectionTag from '@/components/ui/SectionTag'
 import AnimatedText from '@/components/ui/AnimatedText'
 import { IconMail, IconPhone, IconHeadset } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 export const metadata: Metadata = {
   title: 'Contact — Gani Fiber Ltd',
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
 }
 
 const contactTypes = [
-  { icon: IconMail, title: 'Sales Enquiries', desc: 'For new connections, packages, and pricing information.', email: 'sales@ganifiber.com', color: 'bg-electric/10 text-electric' },
-  { icon: IconPhone, title: 'Partnerships', desc: 'For ISP partnerships, wholesale infrastructure, and developer collaborations.', email: 'partnerships@ganifiber.com', color: 'bg-fiber/10 text-fiber' },
-  { icon: IconHeadset, title: 'Technical Support', desc: 'For existing customers — fault reporting, speed issues, and account support.', email: 'support@ganifiber.com', color: 'bg-cyan/10 text-cyan' },
+  { icon: IconMail, title: 'Sales Enquiries', desc: 'For new connections, packages, and pricing information.', email: 'sales@ganifiber.com', variant: 'electric' as const },
+  { icon: IconPhone, title: 'Partnerships', desc: 'For ISP partnerships, wholesale infrastructure, and developer collaborations.', email: 'partnerships@ganifiber.com', variant: 'green' as const },
+  { icon: IconHeadset, title: 'Technical Support', desc: 'For existing customers — fault reporting, speed issues, and account support.', email: 'support@ganifiber.com', variant: 'cyan' as const },
 ]
 
 export default function ContactPage() {
@@ -45,11 +46,14 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-3 gap-6 mt-12">
               {contactTypes.map((ct) => (
                 <FadeUp key={ct.title}>
-                  <div className="border border-gray-100 rounded-xl p-7 text-center hover:border-electric hover:shadow-lg transition-all duration-300 h-full">
-                    <div className={`w-14 h-14 rounded-2xl ${ct.color} flex items-center justify-center mx-auto mb-4`}>
-                      <ct.icon size={26} />
-                    </div>
-                    <h3 className="font-syne font-bold text-lg text-navy mb-2">{ct.title}</h3>
+                  <div className="card-premium p-7 text-center group h-full">
+                    <LivelyIcon
+                      icon={ct.icon}
+                      variant={ct.variant}
+                      className="mx-auto mb-4 w-14 h-14"
+                      size={26}
+                    />
+                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-accent-gold">{ct.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{ct.desc}</p>
                     <a href={`mailto:${ct.email}`} className="text-electric text-sm font-medium hover:underline">
                       {ct.email}

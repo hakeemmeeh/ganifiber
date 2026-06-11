@@ -11,6 +11,7 @@ import SectionTag from '@/components/ui/SectionTag'
 import AnimatedText from '@/components/ui/AnimatedText'
 import StaggerChildren from '@/components/ui/StaggerChildren'
 import { IconDeviceTv, IconDeviceGamepad2, IconBriefcase, IconSmartHome, IconSchool, IconUsers } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 export const metadata: Metadata = {
   title: 'Home Internet — Gani Fiber Ltd',
@@ -68,9 +69,12 @@ export default function ForHomesPage() {
               {useCases.map((uc) => (
                 <FadeUp key={uc.label}>
                   <div className="flex flex-col items-center gap-3 group">
-                    <div className="w-20 h-20 rounded-full border border-accent-gold/20 bg-nude-light flex items-center justify-center transition-all duration-700 ease-luxury hover:-translate-y-2 hover:border-accent-gold hover:shadow-luxe group-hover:scale-105">
-                      <uc.icon size={28} className="text-accent-gold" />
-                    </div>
+                    <LivelyIcon
+                      icon={uc.icon}
+                      variant="gold"
+                      className="w-20 h-20 rounded-full border-accent-gold/20"
+                      size={28}
+                    />
                     <span className="text-xs font-bold uppercase tracking-wider text-navy mt-1">{uc.label}</span>
                   </div>
                 </FadeUp>

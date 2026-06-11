@@ -1,14 +1,14 @@
-'use client'
 import FadeUp from '@/components/ui/FadeUp'
 import CountUpNumber from '@/components/ui/CountUpNumber'
 import { IconBolt, IconActivity, IconMapPin, IconHeadset, IconCpu } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 const stats = [
-  { end: 1, suffix: ' Gbps', label: 'Peak Speed', icon: IconBolt, iconColor: 'text-cyan bg-cyan/10 border-cyan/25' },
-  { end: 99.9, suffix: '%', decimals: 1, label: 'SLA Uptime', icon: IconActivity, iconColor: 'text-fiber bg-fiber/10 border-fiber/25' },
-  { end: 8, suffix: '+', label: 'Coverage Zones', icon: IconMapPin, iconColor: 'text-amber-400 bg-amber-400/10 border-amber-400/25' },
-  { end: 24, suffix: '/7', label: 'NOC Support', icon: IconHeadset, iconColor: 'text-pink-400 bg-pink-400/10 border-pink-400/25' },
-  { text: 'FTTH', label: 'Full Fiber to Home', icon: IconCpu, iconColor: 'text-electric bg-electric/15 border-electric/25' },
+  { end: 1, suffix: ' Gbps', label: 'Peak Speed', icon: IconBolt, variant: 'cyan' as const },
+  { end: 99.9, suffix: '%', decimals: 1, label: 'SLA Uptime', icon: IconActivity, variant: 'green' as const },
+  { end: 8, suffix: '+', label: 'Coverage Zones', icon: IconMapPin, variant: 'gold' as const },
+  { end: 24, suffix: '/7', label: 'NOC Support', icon: IconHeadset, variant: 'pink' as const },
+  { text: 'FTTH', label: 'Full Fiber to Home', icon: IconCpu, variant: 'electric' as const },
 ]
 
 export default function StatsBand() {
@@ -32,16 +32,18 @@ export default function StatsBand() {
         <FadeUp>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((stat, i) => {
-              const Icon = stat.icon
               return (
                 <div
                   key={i}
                   className="flex flex-col items-center text-center group"
                 >
                   {/* Glowing Icon Wrapper */}
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center border mb-4 transition-transform duration-300 group-hover:scale-110 ${stat.iconColor}`}>
-                    <Icon size={22} className="stroke-[1.75]" />
-                  </div>
+                  <LivelyIcon
+                    icon={stat.icon}
+                    variant={stat.variant}
+                    className="mb-4 w-12 h-12"
+                    size={22}
+                  />
                   
                   {/* CountUp or Label */}
                   {'text' in stat && stat.text ? (

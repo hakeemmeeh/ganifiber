@@ -4,6 +4,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
 import SectionTag from '@/components/ui/SectionTag'
 import AnimatedText from '@/components/ui/AnimatedText'
 import { IconMapPin, IconClipboardList, IconRouter, IconWifi } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 
 const steps = [
   {
@@ -11,28 +12,28 @@ const steps = [
     title: 'Check Coverage',
     desc: 'Use our interactive coverage widget above or view our maps to check if Gani Fiber is live in your estate.',
     icon: IconMapPin,
-    color: 'text-electric border-electric/20 bg-electric/5'
+    variant: 'electric' as const
   },
   {
     num: '02',
     title: 'Select Your Plan',
     desc: 'Choose from our high-speed packages (25 Mbps, 100 Mbps, or 1 Gbps) with flexible monthly or annual billing.',
     icon: IconClipboardList,
-    color: 'text-cyan border-cyan/20 bg-cyan/5'
+    variant: 'cyan' as const
   },
   {
     num: '03',
     title: 'Professional Setup',
     desc: 'Our dedicated technicians will run a fiber terminal directly into your home and set up your premium mesh WiFi.',
     icon: IconRouter,
-    color: 'text-fiber border-fiber/20 bg-fiber/5'
+    variant: 'green' as const
   },
   {
     num: '04',
     title: 'Experience the Speed',
     desc: 'Connect your devices instantly and enjoy unlimited, symmetrical fiber internet with guaranteed 99.9% uptime.',
     icon: IconWifi,
-    color: 'text-purple-500 border-purple-500/20 bg-purple-500/5'
+    variant: 'purple' as const
   }
 ]
 
@@ -51,7 +52,7 @@ export default function HowItWorks() {
             text="How to Get Connected"
             className="font-syne font-bold text-3xl lg:text-4xl text-navy justify-center mt-2"
           />
-          <p className="text-gray-500 text-sm mt-4 leading-relaxed">
+          <p className="text-gray-550 text-sm mt-4 leading-relaxed">
             We&apos;ve streamlined our onboarding so you can transition to ultra-fast fiber internet with minimal downtime and zero hassle.
           </p>
         </div>
@@ -68,7 +69,6 @@ export default function HowItWorks() {
           <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-gray-100 -z-10" />
 
           {steps.map((step, idx) => {
-            const Icon = step.icon
             return (
               <motion.div
                 key={idx}
@@ -81,9 +81,12 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Step Icon */}
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border-2 mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${step.color}`}>
-                  <Icon size={26} className="stroke-[1.5]" />
-                </div>
+                <LivelyIcon
+                  icon={step.icon}
+                  variant={step.variant}
+                  className="mb-5 w-14 h-14"
+                  size={26}
+                />
 
                 {/* Step Content */}
                 <h3 className="font-syne font-bold text-lg text-navy mb-3">

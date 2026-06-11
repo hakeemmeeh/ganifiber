@@ -1,15 +1,16 @@
 'use client'
 import { motion } from 'framer-motion'
 import { IconMail, IconPhone, IconMapPin } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 import AnimatedText from '@/components/ui/AnimatedText'
 import FadeInSide from '@/components/ui/FadeInSide'
 import CircleProgress from '@/components/ui/CircleProgress'
 
 const contacts = [
-  { icon: IconMail, label: 'Sales', value: 'sales@ganifiber.com', href: 'mailto:sales@ganifiber.com' },
-  { icon: IconMail, label: 'Partnerships', value: 'partnerships@ganifiber.com', href: 'mailto:partnerships@ganifiber.com' },
-  { icon: IconPhone, label: 'Phone', value: '+254 745 372 776', href: 'tel:+254745372776' },
-  { icon: IconMapPin, label: 'Office', value: 'Valley View Park, Parklands Block B, 7th Floor, Nairobi' },
+  { icon: IconMail, label: 'Sales', value: 'sales@ganifiber.com', href: 'mailto:sales@ganifiber.com', variant: 'electric' as const },
+  { icon: IconMail, label: 'Partnerships', value: 'partnerships@ganifiber.com', href: 'mailto:partnerships@ganifiber.com', variant: 'green' as const },
+  { icon: IconPhone, label: 'Phone', value: '+254 745 372 776', href: 'tel:+254745372776', variant: 'cyan' as const },
+  { icon: IconMapPin, label: 'Office', value: 'Valley View Park, Parklands Block B, 7th Floor, Nairobi', variant: 'gold' as const },
 ]
 
 export default function ContactSection() {
@@ -26,10 +27,13 @@ export default function ContactSection() {
             />
             <div className="mt-8 space-y-5">
               {contacts.map((c, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-electric/10 flex items-center justify-center shrink-0">
-                    <c.icon size={18} className="text-electric" />
-                  </div>
+                <div key={i} className="flex items-start gap-4 group">
+                  <LivelyIcon
+                    icon={c.icon}
+                    variant={c.variant}
+                    className="w-10 h-10 rounded-full shrink-0"
+                    size={18}
+                  />
                   <div>
                     <div className="text-xs text-gray-400 uppercase tracking-wider">{c.label}</div>
                     {c.href ? (

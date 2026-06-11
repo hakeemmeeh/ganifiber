@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { IconBuilding, IconWorld, IconHome, IconBuildingSkyscraper } from '@tabler/icons-react'
+import LivelyIcon from '@/components/ui/LivelyIcon'
 import { fadeInUp } from '@/lib/animations'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
@@ -12,6 +13,7 @@ const solutions = [
     icon: IconBuilding,
     iconBg: 'bg-blue-50',
     iconColor: 'text-electric',
+    variant: 'electric' as const,
     title: 'Wholesale FTTH Infrastructure',
     desc: 'We build, own, and manage fiber infrastructure that ISPs and estate managers can leverage to deliver broadband.',
     tags: ['Open Access', 'Last Mile'],
@@ -21,6 +23,7 @@ const solutions = [
     icon: IconWorld,
     iconBg: 'bg-cyan-50',
     iconColor: 'text-cyan',
+    variant: 'cyan' as const,
     title: 'IP Transit & Metro Fiber',
     desc: 'Full BGP routing, carrier interconnect, and metro fiber links for ISPs expanding across Nairobi and beyond.',
     tags: ['BGP', 'IPv4/IPv6', 'Metro'],
@@ -30,6 +33,7 @@ const solutions = [
     icon: IconHome,
     iconBg: 'bg-green-50',
     iconColor: 'text-fiber',
+    variant: 'green' as const,
     title: 'Home & Estate Broadband',
     desc: 'Unlimited symmetrical fiber broadband for apartments, gated communities, and residential estates.',
     tags: ['Unlimited', 'Symmetrical', 'FTTH'],
@@ -39,6 +43,7 @@ const solutions = [
     icon: IconBuildingSkyscraper,
     iconBg: 'bg-purple-50',
     iconColor: 'text-purple-500',
+    variant: 'purple' as const,
     title: 'Business & Developer Solutions',
     desc: 'Dedicated connectivity for SMEs, enterprises, and property developers building future-ready projects.',
     tags: ['Dedicated', 'SLA', 'Enterprise'],
@@ -74,9 +79,12 @@ export default function SolutionsGrid() {
                 </p>
               </div>
 
-              <div className={`w-13 h-13 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${s.iconBg}`}>
-                <s.icon size={24} className={`${s.iconColor} transition-transform duration-300`} />
-              </div>
+              <LivelyIcon
+                icon={s.icon}
+                variant={s.variant}
+                className="mb-5 w-13 h-13"
+                size={24}
+              />
               <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-350 group-hover:text-accent-gold">{s.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
