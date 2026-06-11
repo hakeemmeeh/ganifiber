@@ -26,22 +26,21 @@ export default function ServiceShowcase() {
   return (
     <section ref={containerRef} className="relative py-0 bg-white overflow-hidden">
       <div className="grid lg:grid-cols-2 min-h-[600px]">
-        {/* Left — Full-bleed Parallax Image */}
-        <div className="relative overflow-hidden min-h-[400px] lg:min-h-0">
+        {/* Left — Image Card */}
+        <div className="relative p-8 lg:p-16 flex items-center justify-center lg:justify-end">
           <motion.div
             style={{ y: imageY }}
-            className="absolute inset-x-0 -top-16 -bottom-16"
+            className="relative w-full aspect-square max-w-md rounded-[2.5rem] overflow-hidden shadow-luxe"
           >
             <Image
-              src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1000&auto=format&fit=crop"
               alt="Gani Fiber engineers installing fiber optic cables"
               fill
               className="object-cover"
             />
+            {/* Gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent pointer-events-none" />
           </motion.div>
-          {/* Gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 pointer-events-none lg:block hidden" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent pointer-events-none" />
 
           {/* Floating stat card */}
           <motion.div
@@ -49,14 +48,14 @@ export default function ServiceShowcase() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md border border-accent-gold/20 rounded-2xl p-5 shadow-luxe z-10"
+            className="absolute bottom-6 lg:bottom-16 left-6 lg:left-12 bg-white/95 backdrop-blur-md border border-accent-gold/20 rounded-2xl p-5 shadow-luxe z-10"
           >
             <div className="font-syne font-bold text-3xl text-navy">1 Gbps</div>
             <div className="text-xs text-gray-500 mt-1 font-medium">Maximum Speed Per Home</div>
           </motion.div>
 
           {/* Decorative corner ring */}
-          <div className="absolute top-6 right-6 w-16 h-16 rounded-full border-2 border-dashed border-white/30 animate-spin-slow pointer-events-none" />
+          <div className="absolute top-10 right-10 w-24 h-24 rounded-full border-2 border-dashed border-gray-200 animate-spin-slow pointer-events-none" />
         </div>
 
         {/* Right — Content Panel */}

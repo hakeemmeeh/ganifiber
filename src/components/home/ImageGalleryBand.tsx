@@ -10,7 +10,7 @@ const gallery = [
   {
     src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop',
     alt: 'Data center fiber infrastructure',
-    span: 'col-span-2 row-span-2',
+    span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2',
     label: 'Core Data Center',
   },
   {

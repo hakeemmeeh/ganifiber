@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 }
 
 const services = [
-  { icon: IconBuilding, title: 'Wholesale FTTH', desc: 'Open-access fiber infrastructure across covered estates and zones. Plug into our network and serve customers immediately.', tags: ['Open Access', 'Last Mile', 'PON'] },
-  { icon: IconWorld, title: 'IP Transit', desc: 'Full BGP routing with IPv4 and IPv6 support. Carrier-grade interconnect at Kenya\u0027s major IXPs.', tags: ['BGP', 'IPv4/IPv6', 'IXP'] },
-  { icon: IconNetwork, title: 'Metro Fiber', desc: 'Dedicated dark fiber and lit services across Nairobi metro. Point-to-point and ring topologies available.', tags: ['Dark Fiber', 'P2P', 'Metro Ring'] },
+  { icon: IconBuilding, title: 'Wholesale FTTH', desc: 'Open-access fiber infrastructure across covered estates and zones. Plug into our network and serve customers immediately.', tags: ['Open Access', 'Last Mile', 'PON'], image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop' },
+  { icon: IconWorld, title: 'IP Transit', desc: 'Full BGP routing with IPv4 and IPv6 support. Carrier-grade interconnect at Kenya\'s major IXPs.', tags: ['BGP', 'IPv4/IPv6', 'IXP'], image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop' },
+  { icon: IconNetwork, title: 'Metro Fiber', desc: 'Dedicated dark fiber and lit services across Nairobi metro. Point-to-point and ring topologies available.', tags: ['Dark Fiber', 'P2P', 'Metro Ring'], image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop' },
 ]
 
 const steps = [
@@ -68,23 +68,38 @@ export default function ForISPsPage() {
             <StaggerChildren className="grid md:grid-cols-3 gap-6 mt-12">
               {services.map((s) => (
                 <FadeUp key={s.title}>
-                  <div className="card-premium p-8 h-full group">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="h-px w-4 bg-accent-gold" />
-                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">WHOLESALE</span>
+                  <div className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-accent-gold after:to-amber-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500 flex flex-col h-full">
+                    {/* Photo Header */}
+                    <div className="relative h-44 lg:h-48 overflow-hidden rounded-t-[2rem]">
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        className="w-full h-full object-cover transition-transform duration-[1.2s] ease-luxury group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-nude-light via-nude-light/40 to-transparent pointer-events-none" />
+                      
+                      <div className="absolute bottom-[-18px] left-6 z-20">
+                        <LivelyIcon
+                          icon={s.icon}
+                          variant="gold"
+                          className="w-12 h-12 border-2 border-white shadow-luxe"
+                          size={22}
+                        />
+                      </div>
                     </div>
-                    <LivelyIcon
-                      icon={s.icon}
-                      variant="gold"
-                      className="mb-5 w-12 h-12"
-                      size={24}
-                    />
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {s.tags.map((tag) => (
-                        <span key={tag} className="bg-accent-gold/5 text-accent-gold text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-accent-gold/10 transition-colors">{tag}</span>
-                      ))}
+
+                    <div className="relative z-10 p-6 pt-8 flex-1 flex flex-col">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="h-px w-4 bg-accent-gold" />
+                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">WHOLESALE</span>
+                      </div>
+                      <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">{s.desc}</p>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {s.tags.map((tag) => (
+                          <span key={tag} className="bg-accent-gold/5 text-accent-gold text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-accent-gold/10 transition-colors">{tag}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </FadeUp>
@@ -106,8 +121,12 @@ export default function ForISPsPage() {
             <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-4">
               {steps.map((step, i) => (
                 <FadeUp key={step.num} delay={i * 0.1}>
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full bg-electric text-white font-syne font-bold text-lg flex items-center justify-center mx-auto">
+                  <div className="text-center relative group">
+                    {/* Dashed connector for desktop */}
+                    {i !== steps.length - 1 && (
+                      <div className="hidden md:block absolute top-7 left-[60%] w-[80%] h-[2px] border-t-2 border-dashed border-gray-200 -z-10 group-hover:border-electric transition-colors" />
+                    )}
+                    <div className="w-14 h-14 rounded-full bg-white border-2 border-gray-100 group-hover:border-electric text-navy group-hover:text-electric font-syne font-bold text-lg flex items-center justify-center mx-auto shadow-sm transition-all duration-300">
                       {step.num}
                     </div>
                     <h4 className="font-syne font-bold text-navy text-sm mt-4">{step.title}</h4>

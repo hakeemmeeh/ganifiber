@@ -83,8 +83,10 @@ export default function PartnerMarquee() {
         <Marquee speed={40} gradient={true} gradientWidth={80} pauseOnHover={true}>
           <div className="flex items-center gap-20 pr-20">
             {partners.map((partner, i) => (
-              <div key={i} className="flex items-center justify-center min-w-[150px]">
-                {partner.logo}
+              <div key={i} className="flex items-center justify-center min-w-[200px]">
+                <div className="bg-white border border-gray-100 shadow-sm rounded-2xl px-8 py-5 flex items-center justify-center w-full h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer">
+                  {partner.logo}
+                </div>
               </div>
             ))}
           </div>

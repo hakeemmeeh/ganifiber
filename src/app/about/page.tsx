@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 }
 
 const values = [
-  { icon: IconTarget, title: 'Mission', desc: 'To build and operate the most reliable fiber infrastructure network in East Africa, enabling affordable and high-quality broadband access for all.' },
-  { icon: IconEye, title: 'Vision', desc: 'To be the leading fiber infrastructure provider in East Africa, connecting communities and powering digital transformation across the region.' },
-  { icon: IconDiamond, title: 'Values', desc: 'Infrastructure excellence, customer-first service, rapid innovation, partnership mindset, and community impact drive everything we do.' },
+  { icon: IconTarget, title: 'Mission', desc: 'To build and operate the most reliable fiber infrastructure network in East Africa, enabling affordable and high-quality broadband access for all.', variant: 'electric' as const },
+  { icon: IconEye, title: 'Vision', desc: 'To be the leading fiber infrastructure provider in East Africa, connecting communities and powering digital transformation across the region.', variant: 'cyan' as const },
+  { icon: IconDiamond, title: 'Values', desc: 'Infrastructure excellence, customer-first service, rapid innovation, partnership mindset, and community impact drive everything we do.', variant: 'gold' as const },
 ]
 
 export default function AboutPage() {
@@ -40,14 +40,24 @@ export default function AboutPage() {
         {/* Company Story */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
-            <FadeInSide direction="left">
-              <div className="relative rounded-2xl overflow-hidden min-h-[420px]">
+            <FadeInSide direction="left" className="relative pb-8 pr-8 lg:pb-12 lg:pr-12">
+              <div className="absolute -top-6 -left-6 w-48 h-48 bg-dot-matrix opacity-35 -z-10 rounded-2xl pointer-events-none animate-float-slow" />
+              <div className="relative rounded-[2rem] overflow-hidden min-h-[460px] shadow-luxe border border-accent-gold/15 card-premium">
                 <img
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&auto=format&fit=crop"
                   alt="Network connections"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-electric/8" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent pointer-events-none" />
+              </div>
+              
+              {/* Overlapping small image card */}
+              <div className="absolute bottom-2 right-2 w-[200px] h-[200px] rounded-[1.5rem] overflow-hidden border-[6px] border-white shadow-luxe z-20 hover:-translate-y-2 transition-transform duration-500">
+                <img
+                  src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop"
+                  alt="Fiber splicing"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </FadeInSide>
             <FadeInSide direction="right" delay={0.15}>
@@ -75,15 +85,22 @@ export default function AboutPage() {
             <StaggerChildren className="grid md:grid-cols-3 gap-6">
               {values.map((v) => (
                 <FadeUp key={v.title}>
-                  <div className="card-premium p-8 text-center h-full group">
+                  <div className="card-premium p-8 h-full group relative overflow-hidden text-left">
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-accent-gold to-amber-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                    
+                    {/* Floating watermark */}
+                    <div className="absolute -bottom-4 -right-4 text-navy/[0.03] group-hover:text-accent-gold/[0.05] transition-colors duration-500 pointer-events-none">
+                      <v.icon size={140} stroke={1} />
+                    </div>
+                    
                     <LivelyIcon
                       icon={v.icon}
-                      variant="gold"
-                      className="mx-auto mb-5 w-14 h-14"
+                      variant={v.variant}
+                      className="mb-6 w-14 h-14"
                       size={28}
                     />
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{v.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold relative z-10">{v.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed relative z-10">{v.desc}</p>
                   </div>
                 </FadeUp>
               ))}
