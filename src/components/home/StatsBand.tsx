@@ -1,7 +1,10 @@
+'use client'
+import { useRef } from 'react'
 import FadeUp from '@/components/ui/FadeUp'
 import CountUpNumber from '@/components/ui/CountUpNumber'
 import { IconBolt, IconActivity, IconMapPin, IconHeadset, IconCpu } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const stats = [
   { end: 1, suffix: ' Gbps', label: 'Peak Speed', icon: IconBolt, variant: 'cyan' as const },
@@ -12,13 +15,27 @@ const stats = [
 ]
 
 export default function StatsBand() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [-80, 80])
+
   return (
     <section 
-      className="relative pt-32 pb-32 overflow-hidden bg-parallax"
-      style={{ 
-        backgroundImage: `url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop')` 
-      }}
+      ref={containerRef}
+      className="relative pt-32 pb-32 overflow-hidden bg-navy"
     >
+      {/* GPU-Accelerated Parallax Background Image */}
+      <motion.div
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop')`,
+          y,
+          transformStyle: "preserve-3d"
+        }}
+        className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center pointer-events-none"
+      />
       {/* Wave divider at top (from White background above) */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none rotate-180 pointer-events-none z-10">
         <svg className="relative block w-full h-8 text-white fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">

@@ -1,17 +1,31 @@
 'use client'
-import Image from 'next/image'
+import { useRef } from 'react'
 import AnimatedText from '@/components/ui/AnimatedText'
 import FadeUp from '@/components/ui/FadeUp'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function CtaBanner() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [-80, 80])
+
   return (
     <section 
-      className="relative overflow-hidden py-32 bg-parallax"
-      style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1548421820-2d4cfd15f8e8?w=1600&auto=format&fit=crop')`
-      }}
+      ref={containerRef}
+      className="relative overflow-hidden py-32 bg-navy border-t border-white/5"
     >
+      {/* GPU-Accelerated Parallax Background Image */}
+      <motion.div
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1548421820-2d4cfd15f8e8?w=1600&auto=format&fit=crop')`,
+          y,
+          transformStyle: "preserve-3d"
+        }}
+        className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center pointer-events-none"
+      />
       {/* Dark overlay & backdrop filter */}
       <div className="absolute inset-0 bg-navy/90 backdrop-blur-[2px] pointer-events-none" />
 
