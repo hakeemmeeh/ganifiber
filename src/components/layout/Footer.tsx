@@ -27,8 +27,8 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto py-16 px-6 lg:px-16">
+    <footer className="bg-nude-light border-t border-gray-200">
+      <div className="max-w-7xl mx-auto pt-16 pb-12 px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1 — Brand */}
           <div>
@@ -50,7 +50,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-navy hover:border-navy/30 transition-colors duration-200"
+                  className="w-9 h-9 rounded-full border border-gray-250 flex items-center justify-center text-gray-400 hover:text-navy hover:border-navy/30 transition-colors duration-200"
                 >
                   <s.icon size={16} />
                 </a>
@@ -67,7 +67,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s.label}>
-                  <Link href={s.href} className="text-gray-500 hover:text-navy transition-colors duration-200 text-sm">
+                  <Link href={s.href} className="text-gray-550 hover:text-navy transition-colors duration-200 text-sm">
                     {s.label}
                   </Link>
                 </li>
@@ -83,7 +83,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {company.map((c) => (
                 <li key={c.label}>
-                  <Link href={c.href} className="text-gray-500 hover:text-navy transition-colors duration-200 text-sm">
+                  <Link href={c.href} className="text-gray-550 hover:text-navy transition-colors duration-200 text-sm">
                     {c.label}
                   </Link>
                 </li>
@@ -96,7 +96,7 @@ export default function Footer() {
             <h4 className="text-navy font-syne font-bold text-sm tracking-wider uppercase mb-5">
               Contact
             </h4>
-            <ul className="space-y-3 text-gray-500 text-sm">
+            <ul className="space-y-3 text-gray-550 text-sm">
               <li>
                 <a href="mailto:sales@ganifiber.com" className="hover:text-navy transition-colors">
                   sales@ganifiber.com
@@ -119,13 +119,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-4">
+      {/* Bottom bar */}
+      <div className="bg-white border-t border-gray-200/60 py-6">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-xs">
             © 2026 Gani Fiber Ltd. All Rights Reserved.
           </p>
-          <p className="text-electric text-xs">
+          <p className="text-accent-gold text-xs font-bold tracking-widest uppercase">
             Designed by Xpeedium
           </p>
         </div>
