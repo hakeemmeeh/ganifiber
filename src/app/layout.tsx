@@ -90,6 +90,7 @@ export const metadata: Metadata = {
 };
 
 import FontTester from "@/components/ui/FontTester";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 export default function RootLayout({
   children,
@@ -99,8 +100,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} ${playfair.variable} ${outfit.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${oswald.variable} ${cinzel.variable} ${lora.variable} ${manrope.variable} antialiased`}>
       <body className="min-h-screen bg-white text-gray-600 font-sans">
-        {children}
-        <FontTester />
+        <SmoothScroll>
+          {children}
+          <FontTester />
+        </SmoothScroll>
       </body>
     </html>
   );
