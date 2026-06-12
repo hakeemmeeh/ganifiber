@@ -81,7 +81,7 @@ export default function ImageGalleryBand() {
             <FadeUp key={i} delay={i * 0.1}>
               <motion.div
                 style={{ x: i % 2 === 0 ? x1 : x2 }}
-                className={`${item.span} relative rounded-[1.5rem] overflow-hidden group cursor-pointer border border-accent-gold/10 hover:border-accent-gold/40 transition-all duration-700 h-full`}
+                className={`${item.span} relative rounded-[1.5rem] overflow-hidden group cursor-pointer border border-cyan/10 hover:border-cyan/40 transition-all duration-700 h-full`}
               >
                 <Image
                   src={item.src}
@@ -95,14 +95,14 @@ export default function ImageGalleryBand() {
                 {/* Label revealed on hover */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-luxury">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent-gold animate-pulse-slow" />
+                    <span className="w-2 h-2 rounded-full bg-cyan animate-pulse-slow" />
                     <span className="text-white text-sm font-bold font-syne">{item.label}</span>
                   </div>
                 </div>
 
                 {/* Top-left corner accent */}
-                <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-white/0 group-hover:border-accent-gold/60 rounded-tl-lg transition-all duration-500 pointer-events-none" />
-                <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-white/0 group-hover:border-accent-gold/60 rounded-br-lg transition-all duration-500 pointer-events-none" />
+                <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-white/0 group-hover:border-cyan/60 rounded-tl-lg transition-all duration-500 pointer-events-none" />
+                <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-white/0 group-hover:border-cyan/60 rounded-br-lg transition-all duration-500 pointer-events-none" />
               </motion.div>
             </FadeUp>
           ))}

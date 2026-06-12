@@ -66,15 +66,15 @@ export default function WhyGaniFiber() {
               className="card-premium p-8 group cursor-pointer relative overflow-hidden"
             >
               {/* Floating backdrop number watermark */}
-              <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.02] group-hover:text-accent-gold/[0.06] transition-colors duration-550 select-none pointer-events-none z-0">
+              <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.02] group-hover:text-cyan/[0.06] transition-colors duration-550 select-none pointer-events-none z-0">
                 0{i + 1}
               </div>
 
               <div className="relative z-10">
                 {/* Gold top accent label */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="h-px w-4 bg-accent-gold" />
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">PILLAR 0{i + 1}</span>
+                  <span className="h-px w-4 bg-cyan" />
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan">PILLAR 0{i + 1}</span>
                 </div>
 
                 <LivelyIcon
@@ -84,7 +84,7 @@ export default function WhyGaniFiber() {
                   size={24}
                 />
                 
-                <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">
+                <h3 className="font-syne font-bold text-lg text-navy mb-3 transition-colors duration-300 group-hover:text-cyan">
                   {p.title}
                 </h3>
                 <p className="text-gray-650 text-sm leading-relaxed">

@@ -72,7 +72,7 @@ export default function ForHomesPage() {
                     <LivelyIcon
                       icon={uc.icon}
                       variant="gold"
-                      className="w-20 h-20 rounded-full border-accent-gold/20"
+                      className="w-20 h-20 rounded-full border-cyan/20"
                       size={28}
                     />
                     <span className="text-xs font-bold uppercase tracking-wider text-navy mt-1">{uc.label}</span>
@@ -109,7 +109,7 @@ export default function ForHomesPage() {
                 <ul className="mt-6 space-y-3">
                   {['Dedicated fiber to each unit', 'Community-wide mesh WiFi', 'Smart building integration', 'Estate management portal'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-accent-gold">✓</span> {item}
+                      <span className="text-cyan">✓</span> {item}
                     </li>
                   ))}
                 </ul>
@@ -134,7 +134,7 @@ export default function ForHomesPage() {
                   <details className="group card-premium p-5 cursor-pointer">
                     <summary className="font-syne font-bold text-navy text-sm flex items-center justify-between list-none">
                       {faq.q}
-                      <span className="text-accent-gold group-open:rotate-45 transition-transform duration-200 text-lg">+</span>
+                      <span className="text-cyan group-open:rotate-45 transition-transform duration-200 text-lg">+</span>
                     </summary>
                     <p className="text-gray-600 text-sm leading-relaxed mt-3">{faq.a}</p>
                   </details>

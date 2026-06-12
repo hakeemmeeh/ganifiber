@@ -66,7 +66,7 @@ export default function HowItWorks() {
           className="grid md:grid-cols-4 gap-8 relative"
         >
           {/* Connecting dashed line (desktop) */}
-          <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-accent-gold/25 -z-10 animate-pulse-slow" />
+          <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-cyan/25 -z-10 animate-pulse-slow" />
 
           {steps.map((step, idx) => {
             return (
@@ -76,13 +76,13 @@ export default function HowItWorks() {
                 className="flex flex-col items-center text-center group relative card-premium p-6 overflow-hidden min-h-[260px]"
               >
                 {/* Floating backdrop number watermark */}
-                <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.015] group-hover:text-accent-gold/[0.05] transition-colors duration-550 select-none pointer-events-none z-0">
+                <div className="absolute bottom-2 right-4 font-syne font-black text-8xl text-navy/[0.015] group-hover:text-cyan/[0.05] transition-colors duration-550 select-none pointer-events-none z-0">
                   {step.num}
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center h-full">
                   {/* Step Number Badge */}
-                  <div className="absolute -top-9.5 left-0 bg-gradient-to-r from-accent-gold to-amber-500 text-navy font-syne font-black text-xs px-3.5 py-1 rounded-full shadow-md tracking-wider uppercase">
+                  <div className="absolute -top-9.5 left-0 bg-gradient-to-r from-cyan to-electric text-navy font-syne font-black text-xs px-3.5 py-1 rounded-full shadow-md tracking-wider uppercase">
                     STEP {step.num}
                   </div>
 

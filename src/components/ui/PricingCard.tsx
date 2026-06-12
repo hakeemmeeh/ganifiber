@@ -39,15 +39,15 @@ export default function PricingCard({
       }}
       className={`border relative overflow-hidden flex flex-col h-full transition-all duration-700 ease-luxury ${
         highlighted
-          ? 'rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy border-accent-gold shadow-xl shadow-navy/25 text-white'
+          ? 'rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy border-cyan shadow-xl shadow-navy/25 text-white'
           : 'card-premium text-navy'
       }`}
     >
       {/* Glow highlight for featured card */}
       {highlighted && (
         <>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/15 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-accent-gold to-amber-500 text-navy text-[10px] font-extrabold px-5 py-1.5 rounded-full shadow-md tracking-wider uppercase z-20">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/15 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan to-electric text-navy text-[10px] font-extrabold px-5 py-1.5 rounded-full shadow-md tracking-wider uppercase z-20">
             Most Popular
           </div>
         </>
@@ -57,9 +57,9 @@ export default function PricingCard({
       <div className={`p-8 text-center border-b flex flex-col items-center justify-center ${
         highlighted 
           ? 'bg-white/5 border-white/10' 
-          : 'bg-accent-gold-pale/35 border-accent-gold/15'
+          : 'bg-cyan-pale/35 border-cyan/15'
       }`}>
-        <div className={`text-2xs font-extrabold tracking-[0.2em] uppercase mb-2 ${highlighted ? 'text-accent-gold' : 'text-gray-500'}`}>
+        <div className={`text-2xs font-extrabold tracking-[0.2em] uppercase mb-2 ${highlighted ? 'text-cyan' : 'text-gray-500'}`}>
           {name}
         </div>
         <div className="font-syne font-black text-4xl lg:text-5xl tracking-tight leading-none">
@@ -83,7 +83,7 @@ export default function PricingCard({
               initial={{ width: 0 }}
               animate={{ width: `${speedPercentage}%` }}
               transition={{ duration: 1, ease: 'easeOut' }}
-              className="h-full rounded-full bg-gradient-to-r from-accent-gold via-cyan to-fiber"
+              className="h-full rounded-full bg-gradient-to-r from-cyan via-cyan to-fiber"
             />
           </div>
           <div className="text-4xs text-right mt-1.5 opacity-60 uppercase tracking-widest font-bold">Symmetrical Line</div>
@@ -98,7 +98,7 @@ export default function PricingCard({
             </span>
           </div>
           {period === 'year' && (
-            <div className="text-4xs font-bold mt-1.5 uppercase tracking-widest text-accent-gold">
+            <div className="text-4xs font-bold mt-1.5 uppercase tracking-widest text-cyan">
               ✓ Get 2 months free!
             </div>
           )}
@@ -108,7 +108,7 @@ export default function PricingCard({
         <ul className="space-y-4 mb-8 flex-grow">
           {features.map((f, i) => (
             <li key={i} className="flex items-start gap-3 text-xs leading-snug font-semibold">
-              <span className="font-bold shrink-0 text-sm text-accent-gold">✓</span>
+              <span className="font-bold shrink-0 text-sm text-cyan">✓</span>
               <span className={highlighted ? 'text-gray-300' : 'text-gray-600'}>{f}</span>
             </li>
           ))}
@@ -118,7 +118,7 @@ export default function PricingCard({
         <button
           className={`w-full py-4 rounded-full font-syne font-extrabold text-xs tracking-widest uppercase transition-all duration-300 cursor-pointer shadow-md ${
             highlighted
-              ? 'bg-gradient-to-r from-accent-gold to-amber-500 hover:from-amber-500 hover:to-accent-gold text-navy shadow-accent-gold/15'
+              ? 'bg-gradient-to-r from-cyan to-electric hover:from-amber-500 hover:to-accent-gold text-navy shadow-cyan/15'
               : 'bg-navy text-white hover:bg-navy-mid hover:shadow-lg'
           }`}
         >

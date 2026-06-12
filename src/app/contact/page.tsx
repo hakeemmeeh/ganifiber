@@ -53,7 +53,7 @@ export default function ContactPage() {
                       className="mx-auto mb-4 w-14 h-14"
                       size={26}
                     />
-                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-accent-gold">{ct.title}</h3>
+                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-cyan">{ct.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{ct.desc}</p>
                     <a href={`mailto:${ct.email}`} className="text-electric text-sm font-medium hover:underline">
                       {ct.email}

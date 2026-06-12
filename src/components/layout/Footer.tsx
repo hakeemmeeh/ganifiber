@@ -27,7 +27,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-nude-light border-t border-gray-200">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto pt-16 pb-12 px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1 — Brand */}
@@ -50,7 +50,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full border border-gray-250 flex items-center justify-center text-gray-400 hover:text-accent-gold hover:border-accent-gold/40 hover:scale-110 hover:shadow-xs transition-all duration-300 group"
+                  className="w-9 h-9 rounded-full border border-gray-250 flex items-center justify-center text-gray-400 hover:text-cyan hover:border-cyan/40 hover:scale-110 hover:shadow-xs transition-all duration-300 group"
                 >
                   <s.icon size={16} className="transition-transform duration-300 group-hover:rotate-6" />
                 </a>
@@ -127,7 +127,7 @@ export default function Footer() {
           <p className="text-gray-400 text-xs">
             © 2026 Gani Fiber Ltd. All Rights Reserved.
           </p>
-          <p className="text-accent-gold text-xs font-bold tracking-widest uppercase">
+          <p className="text-cyan text-xs font-bold tracking-widest uppercase">
             Designed by Xpeedium
           </p>
         </div>

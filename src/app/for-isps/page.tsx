@@ -68,7 +68,7 @@ export default function ForISPsPage() {
             <StaggerChildren className="grid md:grid-cols-3 gap-6 mt-12">
               {services.map((s) => (
                 <FadeUp key={s.title}>
-                  <div className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-accent-gold after:to-amber-500 after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500 flex flex-col h-full">
+                  <div className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-cyan after:to-electric after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500 flex flex-col h-full">
                     {/* Photo Header */}
                     <div className="relative h-44 lg:h-48 overflow-hidden rounded-t-[2rem]">
                       <img
@@ -91,14 +91,14 @@ export default function ForISPsPage() {
 
                     <div className="relative z-10 p-6 pt-8 flex-1 flex flex-col">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="h-px w-4 bg-accent-gold" />
-                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">WHOLESALE</span>
+                        <span className="h-px w-4 bg-cyan" />
+                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan">WHOLESALE</span>
                       </div>
-                      <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
+                      <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-cyan">{s.title}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">{s.desc}</p>
                       <div className="flex flex-wrap gap-2 mt-auto">
                         {s.tags.map((tag) => (
-                          <span key={tag} className="bg-accent-gold/5 text-accent-gold text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-accent-gold/10 transition-colors">{tag}</span>
+                          <span key={tag} className="bg-cyan/5 text-cyan text-xs rounded-md px-2.5 py-1 font-semibold group-hover:bg-cyan/10 transition-colors">{tag}</span>
                         ))}
                       </div>
                     </div>

@@ -49,7 +49,7 @@ export default function ServiceShowcase() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-12 bg-white/95 backdrop-blur-md border border-accent-gold/20 rounded-2xl p-5 shadow-luxe z-10"
+              className="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-12 bg-white/95 backdrop-blur-md border border-cyan/20 rounded-2xl p-5 shadow-luxe z-10"
             >
               <div className="font-syne font-bold text-3xl text-navy">1 Gbps</div>
               <div className="text-xs text-gray-500 mt-1 font-medium">Maximum Speed Per Home</div>
@@ -65,8 +65,8 @@ export default function ServiceShowcase() {
           <FadeInSide direction="right" delay={0.1}>
             <div className="max-w-lg">
               <div className="flex items-center gap-3 mb-5">
-                <span className="h-px w-8 bg-accent-gold" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-accent-gold">World-Class Fiber</span>
+                <span className="h-px w-8 bg-cyan" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-cyan">World-Class Fiber</span>
               </div>
 
               <AnimatedText
@@ -101,7 +101,7 @@ export default function ServiceShowcase() {
                   href="/for-isps"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-2 mt-10 px-8 py-4 rounded-xl bg-gradient-to-r from-accent-gold to-amber-500 text-navy font-bold text-sm font-syne shadow-lg shadow-accent-gold/15 hover:shadow-xl hover:shadow-accent-gold/25 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 mt-10 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan to-electric text-navy font-bold text-sm font-syne shadow-lg shadow-cyan/15 hover:shadow-xl hover:shadow-cyan/25 transition-all cursor-pointer"
                 >
                   Explore Our Network
                   <span className="group-hover:translate-x-1 transition-transform">→</span>

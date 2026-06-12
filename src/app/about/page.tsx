@@ -42,7 +42,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
             <FadeInSide direction="left" className="relative pb-8 pr-8 lg:pb-12 lg:pr-12">
               <div className="absolute -top-6 -left-6 w-48 h-48 bg-dot-matrix opacity-35 -z-10 rounded-2xl pointer-events-none animate-float-slow" />
-              <div className="relative rounded-[2rem] overflow-hidden min-h-[460px] shadow-luxe border border-accent-gold/15 card-premium">
+              <div className="relative rounded-[2rem] overflow-hidden min-h-[460px] shadow-luxe border border-cyan/15 card-premium">
                 <img
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&auto=format&fit=crop"
                   alt="Network connections"
@@ -86,10 +86,10 @@ export default function AboutPage() {
               {values.map((v) => (
                 <FadeUp key={v.title}>
                   <div className="card-premium p-8 h-full group relative overflow-hidden text-left">
-                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-accent-gold to-amber-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-cyan to-electric scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
                     
                     {/* Floating watermark */}
-                    <div className="absolute -bottom-4 -right-4 text-navy/[0.03] group-hover:text-accent-gold/[0.05] transition-colors duration-500 pointer-events-none">
+                    <div className="absolute -bottom-4 -right-4 text-navy/[0.03] group-hover:text-cyan/[0.05] transition-colors duration-500 pointer-events-none">
                       <v.icon size={140} stroke={1} />
                     </div>
                     
@@ -99,7 +99,7 @@ export default function AboutPage() {
                       className="mb-6 w-14 h-14"
                       size={28}
                     />
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold relative z-10">{v.title}</h3>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-cyan relative z-10">{v.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed relative z-10">{v.desc}</p>
                   </div>
                 </FadeUp>

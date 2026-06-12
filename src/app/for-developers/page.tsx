@@ -71,8 +71,8 @@ export default function ForDevelopersPage() {
                 <FadeUp key={s.title}>
                   <div className="card-premium p-7 h-full group">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="h-px w-4 bg-accent-gold" />
-                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">DEVELOPER</span>
+                      <span className="h-px w-4 bg-cyan" />
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan">DEVELOPER</span>
                     </div>
                     <LivelyIcon
                       icon={s.icon}
@@ -80,7 +80,7 @@ export default function ForDevelopersPage() {
                       className="mb-4 w-11 h-11"
                       size={22}
                     />
-                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
+                    <h3 className="font-syne font-bold text-lg text-navy mb-2 transition-colors duration-300 group-hover:text-cyan">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 </FadeUp>
@@ -129,7 +129,7 @@ export default function ForDevelopersPage() {
               {benefits.map((b) => (
                 <FadeUp key={b}>
                   <div className="card-premium p-4 rounded-xl flex items-center gap-3">
-                    <span className="text-accent-gold text-lg">✓</span>
+                    <span className="text-cyan text-lg">✓</span>
                     <span className="text-navy text-sm font-medium">{b}</span>
                   </div>
                 </FadeUp>

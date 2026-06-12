@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Subtle radial glow layers */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-accent-gold/5 blur-[120px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-cyan/5 blur-[120px] pointer-events-none animate-pulse-slow" />
       <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full bg-electric/4 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-cyan/3 blur-[110px] pointer-events-none" />
       
@@ -52,7 +52,7 @@ export default function Hero() {
       <div className="absolute bottom-24 right-12 w-80 h-80 bg-dot-matrix opacity-20 pointer-events-none animate-float-slow [animation-delay:2s]" />
       
       {/* Floating tech ornaments */}
-      <div className="absolute top-1/4 left-1/4 text-accent-gold/25 font-extralight text-2xl pointer-events-none select-none animate-spin-slow">+</div>
+      <div className="absolute top-1/4 left-1/4 text-cyan/25 font-extralight text-2xl pointer-events-none select-none animate-spin-slow">+</div>
       <div className="absolute bottom-1/3 left-10 text-electric/20 font-light text-xl pointer-events-none select-none animate-float-slow">⚡</div>
       <div className="absolute top-1/3 right-1/4 text-cyan/25 font-extralight text-3xl pointer-events-none select-none animate-float-slow [animation-delay:3s]">+</div>
 
@@ -68,7 +68,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.2 }}
-            className="text-accent-gold text-xs tracking-[0.18em] uppercase font-bold"
+            className="text-cyan text-xs tracking-[0.18em] uppercase font-bold"
           >
             Kenya&apos;s Fiber Infrastructure Company
           </motion.p>
@@ -94,25 +94,25 @@ export default function Hero() {
 
           {/* Interactive Coverage Search Widget */}
           <FadeUp delay={0.65}>
-            <div className="mt-8 bg-nude-light border border-accent-gold/15 rounded-3xl p-6 shadow-luxe max-w-xl">
+            <div className="mt-8 bg-gray-50 border border-cyan/15 rounded-3xl p-6 shadow-luxe max-w-xl">
               <h3 className="font-syne font-bold text-navy text-xs tracking-wider uppercase mb-3.5 flex items-center gap-1.5 opacity-85">
-                <IconSearch size={14} className="text-accent-gold" /> Check Coverage In Your Area
+                <IconSearch size={14} className="text-cyan" /> Check Coverage In Your Area
               </h3>
               <form onSubmit={handleCheck} className="flex gap-2.5">
                 <div className="relative flex-grow">
-                  <IconMapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-accent-gold/60" />
+                  <IconMapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-cyan/60" />
                   <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Enter neighborhood (e.g. Kilimani, Syokimau)"
-                    className="w-full bg-white border border-accent-gold/15 rounded-full pl-11 pr-5 py-3.5 text-sm text-navy placeholder-gray-400 focus:outline-none focus:border-accent-gold focus:ring-2 focus:ring-accent-gold/10 transition-all"
+                    className="w-full bg-white border border-cyan/15 rounded-full pl-11 pr-5 py-3.5 text-sm text-navy placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-accent-gold/10 transition-all"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={result.status === 'checking'}
-                  className="bg-gradient-to-r from-accent-gold to-amber-500 hover:from-amber-500 hover:to-accent-gold text-navy font-syne font-extrabold text-xs tracking-widest uppercase px-7 py-3.5 rounded-full transition-all duration-500 shadow-md shadow-accent-gold/10 hover:shadow-lg hover:shadow-accent-gold/25 cursor-pointer disabled:opacity-70 flex items-center gap-1.5"
+                  className="bg-gradient-to-r from-cyan to-electric hover:from-amber-500 hover:to-accent-gold text-navy font-syne font-extrabold text-xs tracking-widest uppercase px-7 py-3.5 rounded-full transition-all duration-500 shadow-md shadow-cyan/10 hover:shadow-lg hover:shadow-cyan/25 cursor-pointer disabled:opacity-70 flex items-center gap-1.5"
                 >
                   {result.status === 'checking' ? (
                     <span className="w-4 h-4 border-2 border-navy border-t-transparent rounded-full animate-spin" />
@@ -127,7 +127,7 @@ export default function Hero() {
                 <motion.div
                   initial={{ opacity: 0, height: 0, marginTop: 0 }}
                   animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
-                  className="overflow-hidden border-t border-accent-gold/10 pt-4"
+                  className="overflow-hidden border-t border-cyan/10 pt-4"
                 >
                   {result.status === 'covered' && (
                     <div className="bg-emerald-50/70 border border-emerald-100 rounded-2xl p-4 flex items-start gap-3">
@@ -146,7 +146,7 @@ export default function Hero() {
                             const el = document.getElementById('plans');
                             el?.scrollIntoView({ behavior: 'smooth' });
                           }}
-                          className="text-xs font-bold text-accent-gold hover:text-amber-500 mt-2.5 flex items-center gap-0.5 cursor-pointer transition-colors"
+                          className="text-xs font-bold text-cyan hover:text-electric mt-2.5 flex items-center gap-0.5 cursor-pointer transition-colors"
                         >
                           View Plans & Get Started →
                         </button>
@@ -156,7 +156,7 @@ export default function Hero() {
 
                   {result.status === 'coming-soon' && (
                     <div className="bg-amber-50/70 border border-amber-100 rounded-2xl p-4 flex items-start gap-3">
-                      <div className="bg-amber-500 text-white rounded-full p-1 mt-0.5">
+                      <div className="bg-electric text-white rounded-full p-1 mt-0.5">
                         <IconClock size={12} />
                       </div>
                       <div className="flex-grow">
@@ -173,7 +173,7 @@ export default function Hero() {
                             placeholder="Your email address"
                             className="bg-white border border-amber-200 rounded-full px-4 py-2 text-xs text-navy placeholder-gray-400 focus:outline-none focus:border-amber-500 flex-grow"
                           />
-                          <button type="submit" className="bg-accent-gold hover:bg-amber-500 text-navy text-3xs font-extrabold tracking-wider uppercase px-4 py-2 rounded-full transition-colors cursor-pointer">
+                          <button type="submit" className="bg-cyan hover:bg-electric text-navy text-3xs font-extrabold tracking-wider uppercase px-4 py-2 rounded-full transition-colors cursor-pointer">
                             Notify Me
                           </button>
                         </form>
@@ -232,7 +232,7 @@ export default function Hero() {
 
         {/* Right column — High Tech Interactive Network Core */}
         <FadeInSide direction="right" delay={0.4}>
-          <div className="relative min-h-[420px] lg:min-h-[540px] w-full rounded-[2.5rem] bg-navy border border-accent-gold/15 overflow-hidden flex items-center justify-center p-6 shadow-luxe shadow-navy/25">
+          <div className="relative min-h-[420px] lg:min-h-[540px] w-full rounded-[2.5rem] bg-navy border border-cyan/15 overflow-hidden flex items-center justify-center p-6 shadow-luxe shadow-navy/25">
             {/* Background glowing gradients inside map */}
             <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-electric/25 rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cyan/20 rounded-full blur-[80px] pointer-events-none" />

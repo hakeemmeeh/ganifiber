@@ -93,7 +93,7 @@ export default function FeaturedProjects() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="group relative rounded-[2rem] overflow-hidden border border-electric/10 hover:border-accent-gold/40 transition-all duration-700 cursor-pointer bg-white/70 backdrop-blur-sm shadow-luxe"
+                className="group relative rounded-[2rem] overflow-hidden border border-electric/10 hover:border-cyan/40 transition-all duration-700 cursor-pointer bg-white/70 backdrop-blur-sm shadow-luxe"
               >
                 {/* Image Header with Zoom */}
                 <div className="relative h-56 lg:h-64 overflow-hidden">
@@ -107,7 +107,7 @@ export default function FeaturedProjects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent pointer-events-none" />
 
                   {/* Badge */}
-                  <div className="absolute top-4 left-4 bg-accent-gold/90 backdrop-blur-sm text-navy text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full">
+                  <div className="absolute top-4 left-4 bg-cyan/90 backdrop-blur-sm text-navy text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full">
                     {project.badge}
                   </div>
 
@@ -117,15 +117,15 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Floating icon */}
-                  <div className="absolute bottom-4 left-4 w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-md border border-electric/15 flex items-center justify-center group-hover:bg-accent-gold/20 group-hover:border-accent-gold/40 transition-all duration-500">
-                    <ProjectIcon size={22} className="text-electric group-hover:text-accent-gold transition-colors duration-500" />
+                  <div className="absolute bottom-4 left-4 w-12 h-12 rounded-2xl bg-white/80 backdrop-blur-md border border-electric/15 flex items-center justify-center group-hover:bg-cyan/20 group-hover:border-cyan/40 transition-all duration-500">
+                    <ProjectIcon size={22} className="text-electric group-hover:text-cyan transition-colors duration-500" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 lg:p-7">
-                  <p className="text-accent-gold text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{project.subtitle}</p>
-                  <h3 className="font-syne font-bold text-lg text-navy mb-2 group-hover:text-accent-gold transition-colors duration-500">
+                  <p className="text-cyan text-[10px] font-bold uppercase tracking-[0.2em] mb-2">{project.subtitle}</p>
+                  <h3 className="font-syne font-bold text-lg text-navy mb-2 group-hover:text-cyan transition-colors duration-500">
                     {project.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed">
@@ -133,7 +133,7 @@ export default function FeaturedProjects() {
                   </p>
 
                   {/* Bottom accent bar */}
-                  <div className="mt-5 h-[2px] bg-gradient-to-r from-accent-gold via-amber-500 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700" />
+                  <div className="mt-5 h-[2px] bg-gradient-to-r from-cyan via-amber-500 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700" />
                 </div>
               </motion.div>
             )

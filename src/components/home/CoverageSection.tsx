@@ -310,7 +310,7 @@ export default function CoverageSection() {
                   )}
                   {result.status === 'coming-soon' && (
                     <div className="bg-amber-50 border border-amber-100 rounded-2xl p-3 flex items-start gap-2.5 text-xs text-amber-800">
-                      <IconClock size={16} className="text-amber-500 shrink-0 mt-0.5" />
+                      <IconClock size={16} className="text-electric shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold">Deployment in progress for {result.location}!</span>
                         <p className="mt-0.5 opacity-90 leading-relaxed">Optical trunk lines are laid. Register details for priority slot reservation.</p>

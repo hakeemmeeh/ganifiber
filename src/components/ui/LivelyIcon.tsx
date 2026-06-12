@@ -18,9 +18,9 @@ export default function LivelyIcon({
   // Map variant to styling colors matching our design system
   const variantStyles = {
     gold: {
-      bg: 'bg-accent-gold/5 border-accent-gold/15 group-hover:border-accent-gold/45',
-      icon: 'text-accent-gold group-hover:text-accent-gold',
-      glow: 'bg-accent-gold/25'
+      bg: 'bg-cyan/5 border-cyan/15 group-hover:border-cyan/45',
+      icon: 'text-cyan group-hover:text-cyan',
+      glow: 'bg-cyan/25'
     },
     electric: {
       bg: 'bg-electric/5 border-electric/15 group-hover:border-electric/45',

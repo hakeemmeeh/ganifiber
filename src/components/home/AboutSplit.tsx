@@ -64,7 +64,7 @@ export default function AboutSplit() {
           <div className="absolute -top-6 -left-6 w-48 h-48 bg-dot-matrix opacity-35 -z-10 rounded-2xl pointer-events-none animate-float-slow" />
           
           {/* Main big image card */}
-          <div className="relative rounded-[2rem] overflow-hidden min-h-[380px] lg:min-h-[460px] border border-accent-gold/15 shadow-luxe z-10 card-premium">
+          <div className="relative rounded-[2rem] overflow-hidden min-h-[380px] lg:min-h-[460px] border border-cyan/15 shadow-luxe z-10 card-premium">
             <Image
               src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&auto=format&fit=crop"
               alt="Gani Fiber field engineer installing cables"
@@ -78,7 +78,7 @@ export default function AboutSplit() {
           <motion.div
             whileHover={{ y: -8, scale: 1.02 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-2 right-2 w-[180px] h-[180px] lg:w-[240px] lg:h-[240px] rounded-[2rem] overflow-hidden border-2 border-accent-gold bg-nude-light p-1.5 shadow-luxe z-20 cursor-pointer"
+            className="absolute bottom-2 right-2 w-[180px] h-[180px] lg:w-[240px] lg:h-[240px] rounded-[2rem] overflow-hidden border-2 border-cyan bg-gray-50 p-1.5 shadow-luxe z-20 cursor-pointer"
           >
             <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden">
               <Image
@@ -91,7 +91,7 @@ export default function AboutSplit() {
           </motion.div>
 
           {/* Decorative floating ring in background */}
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full border-2 border-dashed border-accent-gold/25 animate-spin-slow pointer-events-none -z-10" />
+          <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full border-2 border-dashed border-cyan/25 animate-spin-slow pointer-events-none -z-10" />
         </FadeInSide>
 
         {/* Right — Content */}

@@ -57,8 +57,8 @@ export default function BusinessPage() {
                 <FadeUp key={s.title}>
                   <div className="card-premium p-8 h-full group">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="h-px w-4 bg-accent-gold" />
-                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent-gold">BUSINESS</span>
+                      <span className="h-px w-4 bg-cyan" />
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan">BUSINESS</span>
                     </div>
                     <LivelyIcon
                       icon={s.icon}
@@ -66,7 +66,7 @@ export default function BusinessPage() {
                       className="mb-5 w-12 h-12"
                       size={24}
                     />
-                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-accent-gold">{s.title}</h3>
+                    <h3 className="font-syne font-bold text-xl text-navy mb-3 transition-colors duration-300 group-hover:text-cyan">{s.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 </FadeUp>
