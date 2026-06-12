@@ -49,8 +49,8 @@ export default function PageHero({ tag, title, subtitle, imageSrc, imageAlt, cta
         </div>
 
         {/* Right */}
-        <FadeInSide direction="right">
-          <div className="relative rounded-2xl overflow-hidden min-h-[350px] lg:min-h-[420px] shadow-[0_30px_70px_rgba(26,95,240,0.15)]">
+        <FadeInSide direction="right" className="h-full w-full flex flex-col justify-center">
+          <div className="relative rounded-2xl overflow-hidden h-[350px] lg:h-[420px] w-full shadow-[0_30px_70px_rgba(26,95,240,0.15)]">
             <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
             {statValue && statLabel && (
               <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg">

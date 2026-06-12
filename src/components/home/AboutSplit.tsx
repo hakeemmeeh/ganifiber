@@ -64,7 +64,7 @@ export default function AboutSplit() {
           <div className="absolute -top-6 -left-6 w-48 h-48 bg-dot-matrix opacity-35 -z-10 rounded-2xl pointer-events-none animate-float-slow" />
           
           {/* Main big image card */}
-          <div className="relative rounded-[2rem] overflow-hidden min-h-[380px] lg:min-h-[460px] border border-cyan/15 shadow-luxe z-10 card-premium">
+          <div className="relative rounded-[2rem] overflow-hidden h-[380px] lg:h-[460px] w-full border border-cyan/15 shadow-luxe z-10 card-premium">
             <Image
               src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&auto=format&fit=crop"
               alt="Gani Fiber field engineer installing cables"
