@@ -20,8 +20,8 @@ export default function CoveragePage() {
           tag="Coverage"
           title="Current & Planned Service Areas"
           subtitle="Check our live coverage zones across Nairobi and upcoming expansion areas across Kenya."
-          imageSrc="https://images.unsplash.com/photo-1548421820-2d4cfd15f8e8?w=900&auto=format&fit=crop"
-          imageAlt="Aerial view of Nairobi"
+          imageSrc="/coverage_hero.png"
+          imageAlt="High-tech interactive 3D network coverage map"
           statValue="8+"
           statLabel="Active Zones"
         />
