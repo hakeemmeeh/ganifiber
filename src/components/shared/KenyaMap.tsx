@@ -73,26 +73,26 @@ interface Props {
 export default function KenyaMap({ hoveredZone, setHoveredZone }: Props) {
   // Ensure we only render icons on the client
   if (typeof window === 'undefined') {
-    return <div className="relative w-full aspect-[4/5] lg:aspect-square max-w-md mx-auto bg-navy border border-navy-mid/60 rounded-[2rem] p-2 shadow-xl shadow-cyan/10 animate-pulse" />
+    return <div className="relative w-full aspect-[4/5] lg:aspect-square max-w-md mx-auto bg-[#F0F7FF] border border-electric/10 rounded-[2rem] p-2 shadow-xl shadow-cyan/10 animate-pulse" />
   }
 
   const liveIcon = createIcon('#2ECC5A', true)
   const expandingIcon = createIcon('#00C2F0', false)
 
   return (
-    <div className="relative w-full aspect-[4/5] lg:aspect-square max-w-md mx-auto bg-navy border border-navy-mid/60 rounded-[2rem] p-2 shadow-xl overflow-hidden shadow-cyan/10">
-      <div className="w-full h-full rounded-[1.5rem] overflow-hidden bg-[#0A1020] relative z-10">
+    <div className="relative w-full aspect-[4/5] lg:aspect-square max-w-md mx-auto bg-white border border-electric/10 rounded-[2rem] p-2 shadow-xl overflow-hidden shadow-electric/5">
+      <div className="w-full h-full rounded-[1.5rem] overflow-hidden bg-[#F0F7FF] relative z-10">
         <MapContainer 
           center={[-0.5, 37.5]} // Center of Kenya
           zoom={6} 
           zoomControl={false}
           scrollWheelZoom={true}
           className="w-full h-full z-10"
-          style={{ background: '#0A1020' }}
+          style={{ background: '#F0F7FF' }}
         >
-          {/* CartoDB Dark Matter base map for ultra-premium sleek look */}
+          {/* CartoDB Light theme for a clean, light blue look */}
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           
@@ -134,17 +134,17 @@ export default function KenyaMap({ hoveredZone, setHoveredZone }: Props) {
           background: rgba(255, 255, 255, 0.95);
         }
         .leaflet-container {
-          background: #0A1020 !important;
+          background: #F0F7FF !important;
           outline: none;
         }
         .leaflet-control-attribution {
-          opacity: 0.3 !important;
+          opacity: 0.5 !important;
           background: transparent !important;
-          color: #fff !important;
+          color: #4A5568 !important;
           font-size: 8px !important;
         }
         .leaflet-control-attribution a {
-          color: #fff !important;
+          color: #1A5FF0 !important;
         }
         .custom-leaflet-icon {
           background: transparent;
