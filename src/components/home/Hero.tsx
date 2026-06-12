@@ -94,10 +94,12 @@ export default function Hero() {
 
           {/* Interactive Coverage Search Widget */}
           <FadeUp delay={0.65}>
-            <div className="mt-8 bg-gray-50 border border-cyan/15 rounded-3xl p-6 shadow-luxe max-w-xl">
-              <h3 className="font-syne font-bold text-navy text-xs tracking-wider uppercase mb-3.5 flex items-center gap-1.5 opacity-85">
-                <IconSearch size={14} className="text-cyan" /> Check Coverage In Your Area
-              </h3>
+            <div className="mt-8 relative bg-white/60 backdrop-blur-2xl border border-white/80 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent pointer-events-none" />
+              <div className="relative z-10">
+                <h3 className="font-syne font-bold text-navy text-xs tracking-wider uppercase mb-3.5 flex items-center gap-1.5 opacity-85">
+                  <IconSearch size={14} className="text-cyan drop-shadow-sm" /> Check Coverage In Your Area
+                </h3>
               <form onSubmit={handleCheck} className="flex gap-2.5">
                 <div className="relative flex-grow">
                   <IconMapPin size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-cyan/60" />
@@ -209,6 +211,7 @@ export default function Hero() {
                   )}
                 </motion.div>
               )}
+              </div>
             </div>
             
             <div className="flex flex-wrap gap-4 mt-6">

@@ -68,12 +68,15 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <Link
-            href="/contact"
-            className="hidden lg:inline-flex items-center bg-fiber text-navy font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-xl hover:bg-fiber-dark transition-all duration-200 hover:shadow-md hover:shadow-fiber/10"
-          >
-            Get Connected
-          </Link>
+          <div className="hidden lg:block relative group">
+            <div className="absolute inset-0 bg-fiber blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 rounded-xl" />
+            <Link
+              href="/contact"
+              className="relative inline-flex items-center bg-fiber text-navy font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-xl hover:bg-fiber-dark transition-all duration-300 shadow-md group-hover:shadow-lg group-hover:-translate-y-0.5"
+            >
+              Get Connected
+            </Link>
+          </div>
 
           {/* Mobile Hamburger */}
           <button
