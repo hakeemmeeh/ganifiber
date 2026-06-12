@@ -8,14 +8,17 @@ interface Props {
   className?: string
   fast?: boolean
   slow?: boolean
+  verySlow?: boolean
 }
 
-export default function StaggerChildren({ children, className = '', fast, slow }: Props) {
+export default function StaggerChildren({ children, className = '', fast, slow, verySlow }: Props) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
   const variants = fast
     ? { hidden: {}, visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } } }
     : slow
     ? { hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } } }
+    : verySlow
+    ? { hidden: {}, visible: { transition: { staggerChildren: 0.3, delayChildren: 0.2 } } }
     : staggerContainer
   return (
     <motion.div ref={ref} variants={variants} initial="hidden" animate={inView ? 'visible' : 'hidden'} className={className}>

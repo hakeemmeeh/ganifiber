@@ -58,7 +58,7 @@ export default function WhyGaniFiber() {
           />
         </div>
 
-        <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12">
+        <StaggerChildren verySlow className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12">
           {pillars.map((p, i) => (
             <motion.div
               key={i}
