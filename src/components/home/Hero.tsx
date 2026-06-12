@@ -50,14 +50,6 @@ export default function Hero() {
       {/* Elementor-style decorative background elements */}
       <div className="absolute top-24 left-12 w-64 h-64 bg-dot-matrix opacity-25 pointer-events-none animate-float-slow" />
       <div className="absolute bottom-24 right-12 w-80 h-80 bg-dot-matrix opacity-20 pointer-events-none animate-float-slow [animation-delay:2s]" />
-      
-      {/* Floating tech ornaments */}
-      <div className="absolute top-1/4 left-1/4 text-cyan/25 font-extralight text-2xl pointer-events-none select-none animate-spin-slow">+</div>
-      <div className="absolute bottom-1/3 left-10 text-electric/20 font-light text-xl pointer-events-none select-none animate-float-slow">⚡</div>
-      <div className="absolute top-1/3 right-1/4 text-cyan/25 font-extralight text-3xl pointer-events-none select-none animate-float-slow [animation-delay:3s]">+</div>
-
-      {/* Particle network background */}
-      <ParticleNetwork />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center py-24 lg:py-0 w-full">
         {/* Left column */}
@@ -218,19 +210,6 @@ export default function Hero() {
               <Button variant="outline" href="/for-isps">ISP Partnerships ↗</Button>
             </div>
           </FadeUp>
-
-          {/* Trust strip */}
-          <FadeUp delay={0.8}>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 mt-8 text-xs text-gray-400 font-semibold tracking-wide">
-              <span>✓ FTTH Ready</span>
-              <span>·</span>
-              <span>✓ BGP IPv4/IPv6</span>
-              <span>·</span>
-              <span>✓ 24/7 Support</span>
-              <span>·</span>
-              <span>✓ 1 Gbps Speeds</span>
-            </div>
-          </FadeUp>
         </div>
 
         {/* Right column — High Tech Interactive Network Core */}
@@ -356,29 +335,6 @@ export default function Hero() {
                 <div className="font-syne font-bold text-white text-xs leading-tight">100 Gbps Core</div>
                 <div className="text-gray-400 text-3xs mt-0.5 leading-none font-medium">Redundant ring backhaul</div>
               </div>
-            </motion.div>
-
-            {/* Floating Glassmorphic Badge 3 — NOC Support with floating animation */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -10, 0]
-              }}
-              transition={{
-                delay: 1.2,
-                y: {
-                  repeat: Infinity,
-                  duration: 5.5,
-                  ease: "easeInOut"
-                }
-              }}
-              whileHover={{ scale: 1.05 }}
-              className="absolute top-1/2 -translate-y-1/2 right-6 bg-white/5 backdrop-blur-sm border border-white/5 rounded-xl p-2.5 text-center pointer-events-auto"
-            >
-              <div className="text-cyan font-syne font-bold text-md leading-none">24/7</div>
-              <div className="text-gray-400 text-4xs uppercase tracking-wider mt-1 font-semibold">NOC Support</div>
             </motion.div>
           </div>
         </FadeInSide>
