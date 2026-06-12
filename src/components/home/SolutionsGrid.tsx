@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IconBuilding, IconWorld, IconHome, IconBuildingSkyscraper } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
-import { fadeInUp } from '@/lib/animations'
+import { cinematicCard } from '@/lib/animations'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
 import StaggerChildren from '@/components/ui/StaggerChildren'
@@ -77,7 +77,7 @@ export default function SolutionsGrid() {
           {solutions.map((s, i) => (
             <motion.div
               key={i}
-              variants={fadeInUp}
+              variants={cinematicCard}
               className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-cyan after:to-electric after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500"
             >
               {/* Photo Header with Zoom Effect */}
@@ -92,12 +92,12 @@ export default function SolutionsGrid() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Floating icon badge */}
-                <div className="absolute bottom-[-18px] left-7 z-20">
+                <div className="absolute bottom-[-18px] left-7 z-20 bg-white rounded-2xl shadow-luxe border-2 border-white">
                   <LivelyIcon
                     icon={s.icon}
                     variant={s.variant}
-                    className="w-12 h-12 border-2 border-white shadow-luxe"
-                    size={22}
+                    className="w-12 h-12 !bg-transparent !border-none !shadow-none"
+                    size={24}
                   />
                 </div>
 

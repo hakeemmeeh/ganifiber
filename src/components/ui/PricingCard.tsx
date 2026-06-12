@@ -90,9 +90,9 @@ export default function PricingCard({
         </div>
 
         {/* Plan Price */}
-        <div className="mb-8 text-center bg-gray-50/50 rounded-2xl py-4 border border-gray-100/60 dark:bg-white/5 dark:border-white/5">
+        <div className={`mb-8 text-center rounded-2xl py-4 border ${highlighted ? 'bg-white/5 border-white/10' : 'bg-gray-50/50 border-gray-100/60'}`}>
           <div className="flex items-baseline justify-center">
-            <span className="font-syne font-black text-3xl text-navy dark:text-white">{price}</span>
+            <span className={`font-syne font-black text-3xl ${highlighted ? 'text-white' : 'text-fiber'}`}>{price}</span>
             <span className={`text-2xs font-bold ml-1.5 uppercase tracking-wider ${highlighted ? 'text-gray-405' : 'text-gray-500'}`}>
               / {period === 'month' ? 'month' : 'year'}
             </span>

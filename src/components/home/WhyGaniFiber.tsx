@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { IconBolt, IconRocket, IconAntenna, IconCpu, IconHeartHandshake, IconMap2 } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
-import { fadeInUp } from '@/lib/animations'
+import { cinematicCard } from '@/lib/animations'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
 import StaggerChildren from '@/components/ui/StaggerChildren'
@@ -62,7 +62,7 @@ export default function WhyGaniFiber() {
           {pillars.map((p, i) => (
             <motion.div
               key={i}
-              variants={fadeInUp}
+              variants={cinematicCard}
               className="card-premium p-8 group cursor-pointer relative overflow-hidden"
             >
               {/* Floating backdrop number watermark */}

@@ -38,6 +38,17 @@ export const fadeInUp: Variants = {
   },
 }
 
+export const cinematicCard: Variants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
 export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {

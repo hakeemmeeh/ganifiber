@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <div className="absolute top-0 inset-x-0 z-50 flex justify-center pointer-events-none px-6">
-      <header className="pointer-events-auto w-full transition-all border-b border-gray-100/50 z-50 overflow-visible bg-white/20 backdrop-blur-sm">
+      <header className="pointer-events-auto w-full transition-all z-50 overflow-visible bg-transparent">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center">
