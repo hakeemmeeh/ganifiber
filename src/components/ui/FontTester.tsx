@@ -6,7 +6,12 @@ const fonts = [
   { id: 'syne', name: 'Original (Poppins)', variable: 'var(--font-syne-loaded)' },
   { id: 'outfit', name: 'Outfit (Sleek Tech)', variable: 'var(--font-outfit)' },
   { id: 'montserrat', name: 'Montserrat (Bold Classic)', variable: 'var(--font-montserrat)' },
-  { id: 'playfair', name: 'Playfair (Elegant Serif)', variable: 'var(--font-playfair)' }
+  { id: 'playfair', name: 'Playfair (Elegant Serif)', variable: 'var(--font-playfair)' },
+  { id: 'space-grotesk', name: 'Space Grotesk (Sci-Fi Tech)', variable: 'var(--font-space-grotesk)' },
+  { id: 'oswald', name: 'Oswald (Tall & Authoritative)', variable: 'var(--font-oswald)' },
+  { id: 'cinzel', name: 'Cinzel (Sharp Epic Serif)', variable: 'var(--font-cinzel)' },
+  { id: 'lora', name: 'Lora (Contemporary Serif)', variable: 'var(--font-lora)' },
+  { id: 'manrope', name: 'Manrope (Clean Premium Sans)', variable: 'var(--font-manrope)' }
 ]
 
 export default function FontTester() {

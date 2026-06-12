@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Playfair_Display, Outfit, Montserrat } from "next/font/google";
+import { Poppins, Inter, Playfair_Display, Outfit, Montserrat, Space_Grotesk, Oswald, Cinzel, Lora, Manrope } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -30,6 +30,36 @@ const outfit = Outfit({
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -67,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} ${playfair.variable} ${outfit.variable} ${montserrat.variable} antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} ${playfair.variable} ${outfit.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${oswald.variable} ${cinzel.variable} ${lora.variable} ${manrope.variable} antialiased`}>
       <body className="min-h-screen bg-white text-gray-600 font-sans">
         {children}
         <FontTester />
