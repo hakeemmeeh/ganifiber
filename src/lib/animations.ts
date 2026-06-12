@@ -49,6 +49,28 @@ export const cinematicCard: Variants = {
   },
 }
 
+export const cinematicSideLeft: Variants = {
+  hidden: { opacity: 0, x: -60, scale: 0.95, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
+export const cinematicSideRight: Variants = {
+  hidden: { opacity: 0, x: 60, scale: 0.95, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+}
+
 export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {

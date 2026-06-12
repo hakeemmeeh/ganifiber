@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IconBuilding, IconWorld, IconHome, IconBuildingSkyscraper } from '@tabler/icons-react'
 import LivelyIcon from '@/components/ui/LivelyIcon'
-import { cinematicCard } from '@/lib/animations'
+import { cinematicSideLeft, cinematicSideRight } from '@/lib/animations'
 import AnimatedText from '@/components/ui/AnimatedText'
 import SectionTag from '@/components/ui/SectionTag'
 import StaggerChildren from '@/components/ui/StaggerChildren'
@@ -77,7 +77,7 @@ export default function SolutionsGrid() {
           {solutions.map((s, i) => (
             <motion.div
               key={i}
-              variants={cinematicCard}
+              variants={i % 2 === 0 ? cinematicSideLeft : cinematicSideRight}
               className="card-premium group cursor-pointer relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-gradient-to-r after:from-cyan after:to-electric after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500"
             >
               {/* Photo Header with Zoom Effect */}
@@ -112,7 +112,7 @@ export default function SolutionsGrid() {
                 0{i + 1}
               </div>
 
-              <div className="relative z-10 p-7 pt-8">
+              <div className="relative z-10 p-7 pt-12">
                 {/* Optional styled top dash */}
                 <div className="flex items-center gap-3 mb-3">
                   <span className="h-px w-6 bg-cyan" />
