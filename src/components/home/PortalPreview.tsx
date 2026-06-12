@@ -39,7 +39,7 @@ export default function PortalPreview() {
   }
 
   return (
-    <section className="overlap-panel-gray py-24 pb-20 relative overflow-hidden border-y border-white/5">
+    <section className="overlap-panel-gray pt-32 pb-24 relative overflow-hidden border-y border-white/5">
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-electric/5 rounded-full blur-[120px] pointer-events-none" />
 

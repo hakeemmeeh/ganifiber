@@ -21,13 +21,12 @@ export default function CtaBanner() {
       <motion.div
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1548421820-2d4cfd15f8e8?w=1600&auto=format&fit=crop')`,
-          y,
-          transformStyle: "preserve-3d"
+          y
         }}
         className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center pointer-events-none"
       />
-      {/* Dark overlay & backdrop filter */}
-      <div className="absolute inset-0 bg-[#B8DEFF]/90 backdrop-blur-[2px] pointer-events-none" />
+      {/* Dark overlay without blur to prevent layout thrashing */}
+      <div className="absolute inset-0 bg-[#B8DEFF]/95 pointer-events-none" />
 
       {/* Dot matrix pattern overlay */}
       <div className="absolute inset-0 bg-dot-matrix opacity-12 pointer-events-none" />

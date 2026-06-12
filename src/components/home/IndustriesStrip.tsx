@@ -20,7 +20,7 @@ const industries = [
 
 export default function IndustriesStrip() {
   return (
-    <section className="bg-[#B8DEFF] py-20">
+    <section className="bg-[#B8DEFF] py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
         <SectionTag>Industries</SectionTag>
         <AnimatedText

@@ -89,7 +89,7 @@ export default function SolutionsGrid() {
                   className="object-cover transition-transform duration-[1.2s] ease-luxury group-hover:scale-110"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-nude-light via-nude-light/40 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Floating icon badge */}
                 <div className="absolute bottom-[-18px] left-7 z-20">
