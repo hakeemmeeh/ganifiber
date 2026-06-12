@@ -130,15 +130,15 @@ body {
 .card-premium {
   border-radius: 2rem;
   border-width: 1px;
-  border-color: rgba(212, 175, 55, 0.15);
-  background-color: var(--color-nude-light);
+  border-color: rgba(26, 95, 240, 0.1); /* electric blue tint */
+  background-color: #ffffff;
   box-shadow: var(--shadow-luxe);
   transition: transform 0.7s var(--ease-luxury), box-shadow 0.7s var(--ease-luxury), border-color 0.7s var(--ease-luxury);
 }
 .card-premium:hover {
   transform: translateY(-8px) !important;
   box-shadow: var(--shadow-luxe-hover) !important;
-  border-color: rgba(212, 175, 55, 0.7);
+  border-color: rgba(46, 204, 90, 0.4); /* fiber green tint */
 }
 
 /* ─── MODERN AESTHETIC UTILITIES ────────────────────────────── */
