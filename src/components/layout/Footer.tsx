@@ -67,7 +67,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s.label}>
-                  <Link href={s.href} className="text-navy/80 hover:text-white font-medium transition-colors duration-200 text-sm drop-shadow-sm">
+                  <Link href={s.href} className="text-navy/80 hover:text-fiber font-medium transition-colors duration-200 text-sm drop-shadow-sm">
                     {s.label}
                   </Link>
                 </li>
@@ -83,7 +83,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {company.map((c) => (
                 <li key={c.label}>
-                  <Link href={c.href} className="text-navy/80 hover:text-white font-medium transition-colors duration-200 text-sm drop-shadow-sm">
+                  <Link href={c.href} className="text-navy/80 hover:text-fiber font-medium transition-colors duration-200 text-sm drop-shadow-sm">
                     {c.label}
                   </Link>
                 </li>
@@ -98,17 +98,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-navy/80 font-medium text-sm drop-shadow-sm">
               <li>
-                <a href="mailto:sales@ganifiber.com" className="hover:text-white transition-colors">
+                <a href="mailto:sales@ganifiber.com" className="hover:text-fiber transition-colors">
                   sales@ganifiber.com
                 </a>
               </li>
               <li>
-                <a href="mailto:partnerships@ganifiber.com" className="hover:text-white transition-colors">
+                <a href="mailto:partnerships@ganifiber.com" className="hover:text-fiber transition-colors">
                   partnerships@ganifiber.com
                 </a>
               </li>
               <li>
-                <a href="tel:+254745372776" className="hover:text-white transition-colors">
+                <a href="tel:+254745372776" className="hover:text-fiber transition-colors">
                   +254 745 372 776
                 </a>
               </li>
