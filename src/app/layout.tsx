@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins, Inter, Playfair_Display, Outfit, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -13,6 +13,24 @@ const inter = Inter({
   variable: "--font-dm-sans-loaded",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -41,15 +59,18 @@ export const metadata: Metadata = {
   },
 };
 
+import FontTester from "@/components/ui/FontTester";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} ${playfair.variable} ${outfit.variable} ${montserrat.variable} antialiased`}>
       <body className="min-h-screen bg-white text-gray-600 font-sans">
         {children}
+        <FontTester />
       </body>
     </html>
   );
